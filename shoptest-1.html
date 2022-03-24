@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* 第一橫列 */
+    .earth{
+        width: 100%;
+        background-color: rgb(39, 26, 150);
+    }
+    .heap {
+        width: 1200px;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .fa-solid {
+        color: rgb(245, 238, 238);
+        width: 20px;
+    }
+    .login {
+        color: rgb(252, 248, 248);
+        margin: 10px;
+        font-size: 100%;
+    }
+
+
+    /* 第二橫列 */
+    .use{
+        /* width: 100%; */
+        background-color: rgb(253, 253, 253);
+        
+    }
+    .shop {
+        width: 1200px;
+        display: flex;
+        margin: auto;
+        align-items: center;/*讓子物件致中*/
+        /* flex-direction: row;
+        justify-content: space-around; */
+    }
+    .shop img{
+        /* width: 100%; */
+        margin: 20px;
+    }
+    .shop .serve {
+        flex-grow: 1;
+        width: 100px;
+        margin: auto;
+        /* word-spacing: 20px;/* 字串和字串中間的距離 */
+        /* margin: 30px; */ 
+    }
+    .shop .serve a {
+        text-decoration: none;
+        font-size: 18px;
+    }
+    .shop .free {
+        width: 100px;
+        height: 50px;
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        background-color: rgb(43, 6, 255);
+        color: rgb(250, 248, 248);
+    }
+
+    /* 第三橫列 */
+    .pioneer{
+        width: 100%;
+        background: rgb(12, 19, 58);
+    }
+    .open {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: row;
+    }
+    .hope {
+        width: 600px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .hope h1{
+        margin-top: 30px;
+        margin: 10px;
+        padding: 10px;
+        color: rgb(252, 247, 247);
+    }
+    
+    .hope .pos{
+        margin-top: 30px;
+        margin: 10px;
+        padding: 10px;
+        color: rgb(10, 226, 82);
+    }
+    .hope p {
+        margin-top: 30px;
+        margin: 10px;
+        padding: 10px;
+        color: rgb(252, 247, 247);
+        font-size: 20px;
+    }
+    .label{
+        width: 100px;
+        margin-left: 100px;
+        margin-top: 30px;
+        margin: 10px;
+        padding: 80px;
+    }
+
+    .hope img {
+        width: 100%;
+    }
+
+
+    /* 第四橫列 */
+    .single {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        /* font-size: 50px; */
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* 第五橫列 */
+    .physical-store {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        /* font-size: 20px; */
+        margin-top: 20px;
+    }
+
+    hr{
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    /* 第六、八橫列 */
+    .free-programming{
+        width: 1200px;
+        margin: auto;
+        /*置中*/
+        display: flex;
+        flex-wrap: row;
+        /*檢查用*/
+    }
+    .various-versions {
+        width: 600px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .various-versions .commerce{
+        width: 560px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .various-versions p {
+        width: 560px;
+        margin: 10px;
+        padding: 10px;
+        /* font-size: 30px; */
+    }
+    .various-versions img {
+        width: 100%;
+        /* margin-top: 10%;
+        margin-bottom: 10%; */
+        margin: auto;
+        display: flex;
+        /* flex-direction: row; */
+        /* justify-content: flex-end; */
+    }
+    .list {
+        /* display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        flex-wrap: wrap; */
+        /* font-size: 20px; */
+        width: 580px;
+        margin: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: auto; */
+        margin-bottom: 20px;
+    }
+    .list ul {
+        width: 50%;
+    }
+    .list li{
+        list-style: none;
+    }
+    .list span{
+        margin: 10px;
+    }
+
+
+
+    /* 第七、九橫列 */
+    .seven {
+        width: 1200px;
+        margin: auto;
+        /*置中*/
+        display: flex;
+        flex-direction: row-reverse;
+        /* background: rgb(247, 248, 250); */
+    }
+
+    /* 第十橫列 */
+    .more{
+        width: 100%;
+        background-color: rgb(252, 248, 248);
+    }
+    .meany {
+        width: 1200px;
+        margin: auto;
+        /*置中*/
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+    }
+    .function{
+        width: 1200px;
+        margin: auto;
+        /*置中*/
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .function .system{
+        width: 360px;
+        margin: 10px;
+        padding: 10px;
+        /* background-color: rgb(227, 243, 9); */
+    }
+    .function .system img{
+        width: 35%;
+        margin: auto;/*置中*/
+        display: flex;
+        justify-content: center;
+    }
+
+    .function .system h3{
+        width: 340px;
+        /* margin: auto; */
+        text-align: center ; 
+        margin: 25px 10px 25px 10px ;
+    }
+    .function .system p{
+        width: 340px;
+        margin: 25px 10px 25px 10px ;
+    }
+
+    /* 第十一橫列 */
+    .pop {
+        width: 1200px;
+        margin: auto;
+        /*置中*/
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    /* 第十二橫列 */
+    .popularity{
+        width: 1200px;
+        margin: auto;
+        /* 置中 */
+        display: flex;
+        justify-content: center;
+    }
+    .popularity img{
+        width: 150px;
+        margin: 52px;
+        /* padding: 10px; */
+    }
+
+    /* 第十三橫列 */
+    .bonny-read {
+        width: 1200px;
+        margin: auto;
+        /*置中*/
+        display: flex;
+        flex-wrap: row;
+        /*檢查用*/
+    }
+    .bonny-email {
+        width: 600px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .bonny-email a{
+        display: block;
+        margin: 20px;
+    }
+    .bonny-email p {
+        margin: 20px;
+        font-size: 10px;
+    }
+    .bonny-email .bonny{
+        display: block;
+        margin-top: 100px;
+    }
+    .bonny-email img {
+        width: 600px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    /* 第十四*/
+    .footer{
+        width: 100%;
+        background-color: #071630;
+    }
+    /* 第十四之一橫列 */
+    .asia{
+        width: 1200px; 
+        margin: auto;
+        display: flex;
+        background-color: #172B4D;
+        
+    }
+    .asia h3{
+        width: 460px;
+        display: flex;
+        flex-direction: row;
+        color: rgb(248, 241, 241);
+        margin: 30px;
+        font-size: 40px;
+    }
+    .asia img{
+        width: 100%;
+    }
+
+    /* 第十四之二橫列 */
+    .footend{
+        /* position: relative; */
+        width: 100%;
+        background-color: #071630;
+        margin-top: 50px;
+    }
+    .footend hr{
+        width: 1200px;
+        border: 1px solid #1764e9;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .footend .footend-list{
+        width: 1180px;
+        display: flex;
+        margin: auto;
+        /* flex-direction: row; */
+        justify-content: space-between;
+        color: rgb(248, 244, 244);
+        padding: 0px 10px 0px 10px;
+    }
+    .footend .footend-list .footer{
+        margin: 20px;
+        /* padding-bottom: 80px; */
+    }
+    .footend ul{
+        list-style-type: none;
+    }
+    .footend .footend-list li a{
+        color: rgba(255,255,255,0.4);
+        text-decoration: none ; 
+    }
+    .footend-list .covid-19{
+        display: inline-block;
+        width: 150px;
+        height: 0px;
+        padding: 50px 60px;
+        text-align: center;
+        background-color: rgb(219, 248, 237);
+    }
+
+    /* 第十四之三橫列*/
+    .private{
+        width: 1200px;
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    .web{
+        width: 400px;
+        display: flex;
+    }
+    .web .item{
+        width: 400px;
+        /* margin-bottom: 150px; */
+    }
+    .web .item a{
+        text-decoration: none;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: rgb(255, 255, 255);
+        color: rgb(255, 253, 253);
+        padding: 0px 10px 0px;
+    }
+    .web .item .link-c{
+        border-left: none;
+    }
+
+
+    .community{
+        display: flex;
+    }
+    .community a{
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        /* margin-bottom: 150px; */
+        border-radius: 6em;
+        color: rgb(250, 248, 248);
+        background-color: rgb(52, 15, 119);
+    }
+    .community a .fa-brands{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+    .community a .fa-solid{
+        display: flex;
+        justify-content: center;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .time{
+        width: 200px;
+        /* margin-bottom: 150px; */
+        color: rgba(255,255,255,0.4);
+    }
+
+</style>
+
+
+<body>
+    <div class="earth">
+        <div class="heap">
+            <i class="fa-solid fa-globe"></i>
+            <span class="login">|</span>
+            <span class="login">幫助中心</span>
+            <span class="login">登入網店</span>
+        </div>
+    </div>
+    
+
+    <div class="use">
+        <div class="shop">
+            <img src="https://img.shoplineapp.com/media/image_clips/60811bb98a60d74a03808d4d/original.png?1619073977"
+                alt="">
+            <nav class="serve">
+                <a href="">開店服務</a>
+                <a href="">方案費用</a>
+                <a href="">客戶案例</a>
+                <a href="">開店說明會</a>
+                <a href="">開店諮詢</a>
+                <a href="">更多解決方案</a>
+                <a href="">其他資源</a>
+            </nav>
+            <button class="free">免費使用</button>
+        </div>
+    </div>
+    
+
+
+    <div class="pioneer">
+        <div class="open">
+            <div class="hope">
+                <h1 >想在哪開店創業？</h1>
+                <h2 class="pos">門市必備零售 POS 系統|</h2>
+                <p>超過 35 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
+                
+                <label>
+                    <input class="input-email" type="email" placeholder="請在此輸入電子信箱 (可隨時更換)" >
+                </label>
+
+                <button >免費試用</button>
+                
+            </div>
+            <div class="hope">
+                <img
+                    src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/6191b397e9f2f00026722389/505x.webp?source_format=png">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="single">
+        <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+    </div>
+    <div class="physical-store">
+        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+    </div>
+    
+    <div class="free-programming">
+        <div class="various-versions">
+            <h2 class="commerce">免寫程式、多款版型<br>輕鬆打造全能電商網站</h2>
+
+            <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+            <div class="list">
+                <!-- <div>豐富版型主題與字型搭配</div>
+                <div>RWD 響應式網頁設計</div>
+                <div>獨有網址 ＆ SSL 安全憑證</div>
+                <div>SEO 搜尋引擎優化</div>
+                <div>一頁商店</div>
+                <div>開放 HTML／CSS 編輯</div> -->
+                <ul>
+                    <li><span>✔</span>豐富版型主題與字型搭配</li>
+                    <li><span>✔</span>獨有網址 ＆ SSL 安全憑證</li>
+                    <li><span>✔</span>一頁商店</li>
+                    
+                </ul> 
+                <ul>
+                    <li><span>✔</span>RWD 響應式網頁設計</li>
+                    <li><span>✔</span>SEO 搜尋引擎優化</li>
+                    <li><span>✔</span>開放 HTML／CSS 編輯</li>
+                </ul>
+            </div>
+            <a href="#">看看開店秘訣--></a>
+        </div>
+        <div class="various-versions">
+            <img
+                src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/60b0c566ec23b10026db7112/565x.webp?source_format=png">
+        </div>
+    </div>
+    <hr>
+    <div class="seven">
+        <div class="various-versions">
+            <h2 class="commerce">支持海內外電商<br>金流、物流一次搞定</h2>
+            <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+            <div class="list">
+                
+                <ul>
+                    <li><span>✔</span>線上信用卡刷卡</li>
+                    <li><span>✔</span>超商代碼／條碼繳費</li>
+                    <li><span>✔</span>超商／宅配貨到付款</li>
+                </ul>
+                <ul>
+                    <li><span>✔</span>第三方金流／行動支付整合</li>
+                    <li><span>✔</span>多溫層宅配並指定運費</li>
+                    <li><span>✔</span>發票開立與串接</li>
+                </ul>
+            </div>
+            <a href="#">了解更多金物流--></a>
+        </div>
+        <div class="various-versions">
+            <img src="https://img.shoplineapp.com/media/image_clips/60a4d354a8bff100235bea59/original.png?1621414740">
+        </div>
+    </div>
+    <hr>
+    <div class="free-programming">
+        <div class="various-versions">
+            <h2 class="commerce">刺激下單，創造回購<br>行銷導流、促購模組任你玩</h2>
+
+            <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
+            <div class="list">
+                <ul>
+                    <li><span>✔</span>超過 20 種優惠促銷功能</li>
+                    <li><span>✔</span>會員分級／點數／購物金</li>
+                    <li><span>✔</span>Instagram 購物功能</li>
+                </ul>
+                <ul>
+                    <li><span>✔</span>社群直播購物系統</li>
+                    <li><span>✔</span>Facebook／Google／LINE 廣告追蹤</li>
+                    <li><span>✔</span>Facebook／Instagram／LINE 對話式購物</li>
+                </ul>
+            </div>
+            <a href="#">看更多優惠模組 --></a>
+        </div>
+        <div class="various-versions">
+            <img
+                src="https://img.shoplineapp.com/media/image_clips/60a4d354df356c0012a8a223/original.png?1621414740">
+        </div>
+    </div>
+    <hr>
+    <div class="seven">
+        <div class="various-versions">
+            <h2 class="commerce">O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h2>
+
+            <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
+            <div class="list">
+                <ul>
+                    <li><span>✔</span>門市 POS 系統</li>
+                    <li><span>✔</span>門市快速集客工具</li>
+                    <li><span>✔</span>進銷庫存／調撥／多店管理</li>
+                </ul>
+                <ul>
+                    <li><span>✔</span>線上線下會員／商品／庫存整合</li>
+                    <li><span>✔</span>O2O 即時銷售報表分析</li>
+                    <li><span>✔</span>串接 Shopee 蝦皮購物庫存</li>
+                </ul>
+            </div>
+            <a href="#">了解更多全通路整合--></a>
+        </div>
+        <div class="various-versions">
+            <img src="https://img.shoplineapp.com/media/image_clips/60a4d3540289ef002f2150cb/original.png?1621414740">
+        </div>
+    </div>
+    <hr>
+    <div class="more">
+        <div class="meany">
+            <h2>更多功能與服務</h2>
+        </div>
+        <div class="function">
+            <div class="system">
+                <img src="https://img.shoplineapp.com/media/image_clips/5efef5c3b774cf002ab000ce/original.png?1593767363" alt="">
+                <h3 class="six">強大庫存及訂單系統</h3>
+                <p class="six">從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+            </div>
+            <div class="system">
+                <img src="https://img.shoplineapp.com/media/image_clips/5efef5c4b774cf0027b00084/original.png?1593767364" alt="">
+                <h3 class="six">即時化商店業績分析</h3>
+                <p class="six">圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+            </div>
+            <div class="system">
+                <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e10225e00039a716b9/original.png?1597285089" alt="">
+                <h3 class="six">多國語系、幣值切換</h3>
+                <p class="six">想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+            </div>
+            <div class="system">
+                <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089" alt="">
+                <h3 class="six">專業顧問線上支援</h3>
+                <p class="six">迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+            </div>
+            <div class="system">
+                <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089" alt="">
+                <h3 class="six">廣告行銷加值服務</h3>
+                <p class="six"> 由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+            </div>
+            <div class="system">
+                <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e16200760045e6138f/original.png?1597285089" alt="">
+                <h3 class="six">老闆專屬成長社群</h3>
+                <p class="six">致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="pop">
+        <p>人氣品牌一致推薦使用</p>
+    </div>
+    <div class="popularity">
+        <img src="data:image/png;base64,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"alt="">
+        <img src="data:image/jpeg;base64,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" alt="">
+        <img src="https://img.shoplineapp.com/media/image_clips/5491b9ed039055b77200000a/original.png?1418836460" alt="">
+        <img src="https://img.shoplineapp.com/media/image_clips/5edda86c7670fa0986961311/original.png?1591584876" alt="">
+        <img src="https://twtmsearch.tipo.gov.tw/imageLoad.jsp?path=/20210316/109/026/114/pic_109026114_20200424_1.jpg&formatName=jpeg&pathCodeId=282_pic" alt="">
+    </div>
+
+    <div class="bonny-read">
+        <div class="bonny-email">
+            <a href="">bonnyread.com.tw -></a>
+            <p>SHOPLINE 在行動裝置上操作的順暢很高;使用者給的建議與意見採納，處理的速度也不錯;還一直有新功能推出，不斷成長</p>
+            <p class="bonny">-BONNY & READ 店長,Stan</p>
+        </div>
+        <div class="bonny-email">
+            <img src="https://img.shoplineapp.com/media/image_clips/5f06bed2436e2b86c4471215/original.jpg?1594277585">
+        </div>
+    </div>
+    
+
+    <div class="footer">
+        <div class="asia">
+            <h3>全亞洲超過<br>350,000 個品牌都在使用SHOPLINE</h3>
+            <div class="earth-map">
+                <img  width="615" height="310" alt="" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820">
+            </div>
+        </div>
+    
+        <div class="footend">
+            <!-- <hr>    /*加一條線*/ -->
+            <hr>
+            <div class="footend-list">
+            <div  class="footer">
+                <h4>SHOPLINE</h4>
+                <ul>
+                    <li>
+                        <a href="#">關於我們</a>
+                    </li>
+                    <li>
+                        <a href="#">認識團隊</a>
+                    </li>
+                    <li>
+                        <a href="#">人才招募</a>
+                    </li>
+                    <li>
+                        <a href="#">合作機會</a>
+                    </li>
+                    <li>
+                        <a href="#">精選夥伴</a>
+                    </li>
+                    <li>
+                        <a href="#">媒體報導</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer">
+                <h4>我要開店</h4>
+                <ul>
+                    <li>
+                        <a href="#">方案費用</a>
+                    </li>
+                    <li>
+                        <a href="#">功能模組</a>
+                    </li>
+                    <li>
+                        <a href="#">客戶案例</a>
+                    </li>
+                    <li>
+                        <a href="#">開店說明會</a>
+                    </li>
+                    <li>
+                        <a href="#">開店諮詢</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer">
+                <h4>功能特色</h4>
+                <ul>
+                    <li>
+                        <a href="#">網路開店</a>
+                    </li>
+                    <li>
+                        <a href="#">社群購物</a>
+                    </li>
+                    <li>
+                        <a href="#">零售</a>
+                    </li>
+                    <li>
+                        <a href="#">網路商店</a>
+                    </li>
+                    <li>
+                        <a href="#">網路製作</a>
+                    </li>
+                    <li>
+                        <a href="#">電商物流</a>
+                    </li>
+                    <li>
+                        <a href="#">訂單管理</a>
+                    </li>
+                    <li>
+                        <a href="#">一頁商店</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer">
+                <h4>開店資源</h4>
+                <ul>
+                    <li>
+                        <a href="#">開店秘技</a>
+                    </li>
+                    <li>
+                        <a href="#">版型主題</a>
+                    </li>
+                    <li>
+                        <a href="#">新手問答</a>
+                    </li>
+                    <li>
+                        <a href="#">POS 硬體</a>
+                    </li>
+                    <li>
+                        <a href="#">最新功能</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer">
+                <h4>更多解決方案</h4>
+                <ul>
+                    <li>
+                        <a href="#">企業旗艦方案</a>
+                    </li>
+                    <li>
+                        <a href="#">跨境電商方案</a>
+                    </li>
+                    <li>
+                        <a href="#">廣告計畫方案</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer">
+                <h4>其他資源</h4>
+                <ul>
+                    <li>
+                        <a href="#">電商教室</a>
+                    </li>
+                    <li>
+                        <a href="#">充電工作坊</a>
+                    </li>
+                    <li>
+                        <a href="#">DreamBig 創品牌</a>
+                    </li>
+                    <li>
+                        <a href="#">電商成長學苑</a>
+                    </li>
+                    <li>
+                        <a href="#">SHOPLINE TRENDS 電商數據庫</a>
+                    </li>
+                    <li>
+                        <a href="#">LINE 官方帳號</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer">
+                <h4>應用案例</h4>
+                <ul>
+                    <li>
+                        <a href="#">金流與物流</a>
+                    </li>
+                    <li>
+                        <a href="#">SHOPLINE Payments</a>
+                    </li>
+                    <li>
+                        <a href="#">網紅口碑行銷方案</a>
+                    </li>
+                    <li>
+                        <a href="#">實體零售</a>
+                    </li>
+                    <li>
+                        <a href="#">IG 直播 +1</a>
+                    </li>
+                    <li>
+                        <a href="#">社群電商工具包</a>
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="covid-19">
+                    <a href="#">COVID-19 應變措施</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="private">
+            <div class="membership-terms">
+                <ul class="web">
+                    <li class="item"><a class="link-c" href="">網站地圖</a></li>
+                    <li class="item"><a class="link" href="">隱私權政策</a></li>
+                    <li class="item"><a class="link" href="">會員條款</a></li>
+                </ul>
+            </div>
+    
+            <div class="community">
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+    
+                <a href="#">
+                    <i class="fa-solid fa-comment-dots"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+    
+            <div class="time">
+                服務時間 星期一至五 上午 10 點至晚上 7 點<br>© Copyright 2013-22 SHOPLINE Limited.
+            </div>
+        </div>
+        
+    </div>
+    
+    </div>
+    
+
+
+</body>
+
+</html>
