@@ -1,4 +1,4 @@
-[我的GitHubg首頁](https://github.com/Ankepoyou/Ankepoyou.github.io)
+[我的GitHubg首頁](https://ankepoyou.github.io/index.html)
 
 markdown語法
 # h1級標題
