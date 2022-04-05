@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 960px;
+            border: 2px solid red;
+            
+        }
+        .picturestyle{
+            width: 960px;
+            height: 800px;
+            vertical-align: top;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        #movie img{
+            width: 320px;
+            height: 200px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="me-pic">
+
+            <div class="my-Mobis">
+                <img id="imagel" src="" alt="">
+            </div>
+
+            <div class="my">
+                <h2>姓名:</h2>
+                <p></p>
+                <h2>信箱:</h2>
+                <p></p>
+                <h2>學校:</h2>
+                <p></p>
+                <h2>興趣:</h2>
+                <p ></p>
+            </div>
+
+        </div>
+
+        <div id="movie"></div>
+    </div>
+
+
+    <!-- <img id="imagel" src="" alt=""> -->
+        
+
+    <script>
+        
+        let img = document.getElementById("imagel");
+        let movie = document.getElementById("movie");
+        let p = document.querySelectorAll("p");
+        let include = ["陳柏宇"," poyouanke@gmail.com"," 中華大學"," 羽球"];
+
+        
+
+        const movieUrl ="https://raw.githubusercontent.com/Ankepoyou/FileStorage/62fbe483cf7fd1a0f188357e86d446769ca23e78/pic5.jpg";//圖片
+        img.src= movieUrl;
+        img.setAttribute("class", "picturestyle");
+
+
+        include.forEach( (x, index)=>{p[index].innerText = include[index]}
+        );
+    
+
+        document.write("<br>");//換行
+
+        
+
+        const imageArray = [
+            "https://raw.githubusercontent.com/Ankepoyou/FileStorage/main/pic1.jpg",
+            "https://raw.githubusercontent.com/Ankepoyou/FileStorage/62fbe483cf7fd1a0f188357e86d446769ca23e78/pic4.jpg",
+            "https://raw.githubusercontent.com/Ankepoyou/FileStorage/main/pic3.jpg",
+
+        ];
+            // 用字串插植
+        imageArray.forEach((x, index)=>{
+                // document.write(`<img  src="${url}">` + "<br>");
+                movie.innerHTML += `<img  src="${x}">`});
+
+    </script>
+</body>
+</html>
