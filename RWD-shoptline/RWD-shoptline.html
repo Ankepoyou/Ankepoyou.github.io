@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Reset.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./grid.css">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+            top: 65px;
+            z-index: 1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 2;
+        }
+
+        .row {
+            max-width: 1200px;
+            /* width: 1200px; */
+            display: flex;
+            margin: auto;
+            flex-direction: column-reverse;
+            /* background-color: rgb(12, 19, 58); */
+        }
+
+        .benner {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            background-color: rgb(12, 19, 58);
+            margin: auto;
+            position: relative;
+            top: 65px;
+            z-index: 1;
+        }
+
+
+
+        .heap {
+            /* width: 50%; */
+            display: none;
+            /* flex-direction: row;
+            margin: auto;
+            justify-content: flex-end;
+            align-items: center; */
+        }
+
+
+
+
+
+        .main-header {
+            padding: 10px 20px;
+            background-color: rgb(252, 247, 247);
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            position: relative;
+            /* height: 100%; */
+        }
+
+        .main-nav {
+            position: absolute;
+            width: 100%;
+            background-color: rgb(254, 253, 251);
+
+            left: 0;
+            top: 100%;
+            display: none;
+            height: 100vh;
+        }
+
+        #menu_control {
+            display: none;
+            position: absolute;
+            z-index: 10;
+        }
+
+
+
+
+        /*當被選取打勾的時候，選到.main-header裡面的.main-nav出現*/
+        #menu_control:checked~.main-header-bgc .main-nav {
+            display: block;
+            /*出現*/
+        }
+
+        .main-nav a {
+            display: block;
+            padding: 10px 20px;
+            margin-top: 0px;
+            font-size: 20px;
+            margin: 40px 0px;
+            text-decoration: none;
+            color: #000;
+            /* line-height: 70px; */
+        }
+
+        .main-nav .free {
+            display: block;
+            padding: 10px 20px;
+            margin-top: 43px;
+            font-size: 20px;
+
+            margin: auto;
+        }
+
+        .in {
+            display: block;
+            padding: 10px 20px;
+            margin-top: 43px;
+            font-size: 20px;
+            margin: auto;
+        }
+
+        .logo {
+            width: 140px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            vertical-align: top;
+
+        }
+
+        .hb::before {
+            display: inline-block;
+            /* width: 40px;
+            height: 40px; */
+            content: '';
+            /* position: absolute; */
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: rgb(7, 7, 7);
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            box-shadow: 0px 8px 0px rgb(18, 17, 17),
+                0px -8px 0px rgb(14, 10, 10);
+        }
+
+
+        .item {
+            /* background-color: rgb(12, 19, 58); */
+            /* height: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px; */
+        }
+
+        .where {
+            font-size: 30px;
+            /* margin-top: 30px; */
+            /* margin: 10px; */
+            padding: 10px;
+            color: rgb(252, 247, 247);
+        }
+
+        .pos {
+            margin-top: 30px;
+            margin: 10px;
+            padding: 10px;
+            font-size: 30px;
+            color: rgb(10, 226, 82);
+        }
+
+        p {
+            margin-top: 30px;
+            margin: 10px;
+            padding: 10px;
+            color: rgb(252, 247, 247);
+            font-size: 10px;
+        }
+
+        .email-changed {
+            /* width: 400px; */
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .email-changed .input-email {
+            background: unset;
+            /*不要有背景*/
+            border: none;
+            width: 300px;
+            margin: auto;
+            border-bottom: solid white;
+        }
+
+        button {
+            color: rgb(249, 249, 250);
+            border-radius: 5px;
+            background-color: #0061ff;
+            /* margin: 20px; */
+            display: block;
+            /* padding: 10px; */
+        }
+
+
+
+        .item img {
+            width: 100%;
+        }
+
+
+        .single {
+            /* width: 1200px; */
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            /* font-size: 50px; */
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        /* 第五橫列 */
+        .physical-store {
+            /* width: 1200px; */
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            /* font-size: 20px; */
+            margin-top: 20px;
+        }
+
+        .physical-store p {
+            color: #000;
+        }
+
+        hr {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 第六、八橫列 */
+        .free-programming {
+            /* width: 1200px; */
+            /* margin: auto; */
+            /*置中*/
+            /* display: flex;
+            flex-wrap: row; */
+            /*檢查用*/
+        }
+
+        .item-grop {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .various-versions {
+
+            /* width: 600px; */
+            margin: 10px;
+        }
+
+        .various-versions .commerce {
+            /* width: 560px; */
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .various-versions p {
+            margin: 10px;
+            padding: 10px;
+            color: #000;
+
+        }
+
+        .various-versions a {
+            margin: 10px;
+            color: rgb(2, 6, 252);
+            text-decoration: none;
+        }
+
+        .various-versions img {
+            width: 100%;
+            margin: auto;
+            display: flex;
+
+        }
+
+        .list {
+            margin: 10px;
+            /* display: flex; */
+            margin-bottom: 20px;
+        }
+
+        .list ul {
+            width: 100%;
+        }
+
+        .list li {
+            list-style: none;
+        }
+
+        .list span {
+            margin: 10px;
+        }
+
+        /* 第十橫列 */
+        .more {
+            width: 100%;
+            background-color: #f4f5f7;
+        }
+
+        .meany {
+            /* width: 1200px; */
+            margin: auto;
+            /*置中*/
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .function {
+            /* width: 50%; */
+            /* width: 1200px; */
+            margin: auto;
+            /*置中*/
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+
+        .function .system {
+            width: 35%;
+            /* width: 360px; */
+            margin: 10px;
+            padding: 10px;
+            /* background-color: rgb(227, 243, 9); */
+        }
+
+        .system-serve {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            margin: auto;
+            background-color: #ffffff;
+        }
+
+        .function .system-serve img {
+            width: 50%;
+            display: flex;
+            padding-top: 30px;
+            margin: auto;
+        }
+
+        .function .system h3 {
+            /* width: 340px; */
+            /* margin: auto; */
+            text-align: center;
+            margin: 25px 10px 25px 10px;
+        }
+
+        .function .system p {
+            /* width: 340px; */
+            margin: 25px 10px 25px 10px;
+            color: #000;
+        }
+
+
+
+
+        /* 第十一橫列 */
+        .pop {
+            max-width: 1200px;
+            margin: auto;
+            /*置中*/
+            display: flex;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .pop p {
+            font-size: 20px;
+            color: #000;
+        }
+
+        /* 第十二橫列 */
+        .popularity {
+            display: none;
+        }
+
+
+
+
+
+
+
+
+        /* 第十三橫列 */
+        .bonny-read {
+            /* width: 1200px; */
+            margin: auto;
+            /*置中*/
+            display: flex;
+            flex-direction: column-reverse;
+            /* flex-wrap: wrap; */
+            /*檢查用*/
+        }
+
+        .bonny-email {
+            /* width: 600px; */
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .bonny-email a {
+            display: block;
+            margin: 20px;
+
+        }
+
+        .bonny-email p {
+            margin: 20px;
+            font-size: 10px;
+            color: #000;
+        }
+
+        .bonny-email .bonny {
+            display: block;
+            margin-top: 100px;
+            color: #000;
+        }
+
+        .bonny-email img {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+
+
+
+
+
+
+        .footer {
+            width: 100%;
+            background-color: #071630;
+            position: relative;
+            top: 100px;
+            z-index: 1;
+        }
+
+        /* 第十四之一橫列 */
+        .asia {
+            width: 100%;
+            height: 310px;
+            display: flex;
+            background-image: url("https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820//");
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        .brand-usage {
+            width: 1200px;
+            margin: auto;
+
+        }
+
+        .brand-usage h3 {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            color: rgb(248, 241, 241);
+            /* margin: 10px; */
+            font-size: 40px;
+        }
+
+        .brand-usage a {
+            width: 360px;
+            height: 46px;
+            line-height: 46px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(250, 246, 246);
+            background-color: #0061ff;
+            border-radius: 6em;
+        }
+
+
+
+        .footend .menu {
+
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            color: rgb(248, 244, 244);
+            /* padding: 0px 10px 0px 10px; */
+        }
+
+        .footend .menu .item {
+            margin: 20px;
+            line-height: 30px;
+            /* padding-bottom: 80px; */
+        }
+
+        .footend ul {
+            list-style-type: none;
+        }
+
+        .footend .menu li a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+        }
+
+        label {
+            color: rgb(254, 251, 252);
+        }
+
+
+        /* 第一清單 */
+        #shoplne {
+            display: none;
+        }
+
+        #shoplne~ul {
+            display: none;
+            color: red;
+        }
+
+        #shoplne:checked~ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .shoplne-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .shoplne-label span {
+            display: flex;
+        }
+
+        .shoplne-label span img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+        }
+
+        /* 第二清單 */
+        #open {
+            display: none;
+        }
+
+        #open~ul {
+            display: none;
+        }
+
+        #open:checked~ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .open-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .open-label span {
+            display: flex;
+        }
+
+        .open-label span img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+        }
+
+        /* 第三清單 */
+        #feature {
+            display: none;
+        }
+
+        #feature~ul {
+            display: none;
+        }
+
+        #feature:checked~ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .feature-label span {
+            display: flex;
+        }
+
+        .feature-label span img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+        }
+
+        /* 第四清單 */
+        #resource {
+            display: none;
+        }
+
+        #resource~ul {
+            display: none;
+        }
+
+        #resource:checked~ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .resource-label span {
+            display: flex;
+        }
+
+        .resource-label span img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+        }
+
+        /* 第五清單 */
+        #solution {
+            display: none;
+        }
+
+        #solution~ul {
+            display: none;
+        }
+
+        #solution:checked~ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .solution-label span {
+            display: flex;
+        }
+
+        .solution-label span img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+        }
+
+        /* 第六清單 */
+        #other {
+            display: none;
+        }
+
+        #other~ul {
+            display: none;
+        }
+
+        #other:checked~ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .other-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .other-label span {
+            display: flex;
+        }
+
+        .other-label span img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+        }
+
+        /* 第七清單 */
+        #case {
+            display: none;
+        }
+
+        #case~ul {
+            display: none;
+        }
+
+        #case:checked~ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .case-label span {
+            display: flex;
+        }
+
+        .case-label span img {
+            width: 20px;
+            height: 20px;
+            margin: auto;
+        }
+
+
+
+
+
+        .covid-19 {
+            display: block;
+            width: 300px;
+            /* margin-left: auto; */
+            margin: auto;
+            margin-top: 50px;
+            /* padding: 20px 30px; */
+            text-align: center;
+            color: #000;
+            text-decoration: none;
+            background-color: rgb(219, 248, 237);
+        }
+
+
+
+        /* 第十四之三橫列*/
+        .private {
+            /* width: 1200px; */
+            display: flex;
+            margin: auto;
+            /* padding: 10px; */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            order: 1;
+        }
+
+        .membership-terms {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .web {
+            /* width: 400px; */
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            line-height: 50px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .web .item {
+            display: block;
+            margin: auto;
+        }
+
+        .web .item a {
+            text-decoration: none;
+            /* border-left-width: 1px;
+            border-left-style: solid;
+            border-left-color: rgb(255, 255, 255); */
+            color: rgb(255, 253, 253);
+            padding: 0px 10px 0px;
+        }
+
+        .web .item .link-c {
+            border-left: none;
+        }
+
+
+        .community {
+            display: flex;
+            order: -1;
+            padding: 10px;
+            margin: 10px;
+
+        }
+
+        .community a {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            /* margin-bottom: 150px; */
+            border-radius: 6em;
+            color: rgb(250, 248, 248);
+            background-color: #172b4d;
+        }
+
+        .community a .fa-brands {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .community a .fa-solid {
+            display: flex;
+            justify-content: center;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+
+        .time {
+            padding: 10px;
+            margin: 10px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+
+
+
+
+
+
+        /*平板直向*/
+        @media screen and (min-width:768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .email-changed {
+                /* width: 400px; */
+                margin: 10px;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .email-changed .input-email {
+                background: unset;
+                /*不要有背景*/
+                border: none;
+                width: 300px;
+                margin: auto;
+                border-bottom: solid white;
+            }
+
+            .list {
+                margin: 10px;
+                display: flex;
+                margin-bottom: 20px;
+            }
+
+
+            .function .system {
+                width: 20%;
+            }
+
+            .covid-19 {
+                margin-left: 20px;
+            }
+
+
+
+
+
+
+            /* 第十四之三橫列*/
+            .private {
+                /* width: 1200px; */
+                display: flex;
+                margin: auto;
+                /* padding: 10px; */
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+
+            .web {
+                /* width: 400px; */
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                line-height: 50px;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .web .item {
+                display: block;
+                margin: auto;
+            }
+
+            .web .item a {
+                border-left-width: 1px;
+                border-left-style: solid;
+                border-left-color: rgb(255, 255, 255);
+            }
+
+        }
+
+        /*平板橫向*/
+        @media screen and (min-width:992px) {
+
+            .footend {
+                max-width: 1200px;
+                margin: auto;
+            }
+
+
+
+            .col-lg-1 {
+                width: 8.333333%;
+            }
+
+
+
+            .container {
+                top: 98px;
+            }
+
+
+
+            .benner {
+
+                top: 100px;
+            }
+
+
+            .heap {
+                max-width: 1200px;
+                /* width: 50%; */
+                display: none;
+                /* flex-direction: row;
+            margin: auto;
+            justify-content: flex-end;
+            align-items: center; */
+            }
+
+
+            .main-header-bgc {
+                background-color: #fff;
+            }
+
+            .main-header {
+                max-width: 1200px;
+                height: 100%;
+                padding: 10px 20px;
+                background-color: rgb(252, 247, 247);
+                display: flex;
+                justify-content: space-between;
+                position: static;
+                margin: auto;
+
+            }
+
+            .main-nav {
+                position: unset;
+                width: 100%;
+                background-color: rgb(254, 253, 251);
+                display: inline-block;
+                height: auto;
+            }
+
+            #menu_control {
+                display: none;
+                position: static;
+                z-index: 10;
+            }
+
+            /*當被選取打勾的時候，選到.main-header裡面的.main-nav出現*/
+            #menu_control:checked~.main-header .main-nav {
+                display: block;
+                /*出現*/
+            }
+
+            .main-nav a {
+                display: inline-block;
+                padding: 5px 3px;
+                margin-top: 0px;
+                font-size: 20px;
+                margin: 0px 0px;
+            }
+
+            .main-nav .free {
+                display: inline-block;
+                padding: 10px 20px;
+                margin-top: 0px;
+                font-size: 20px;
+            }
+
+            .in {
+                display: none;
+            }
+
+            .logo img {
+                vertical-align: top;
+            }
+
+            .hb {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-color: rgb(200, 255, 0);
+            }
+
+
+
+
+
+            .row {
+                /* flex-wrap: wrap; */
+                flex-direction: row;
+            }
+
+            .item-grop {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .item-grop-even {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .various-versions {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                /* width: 600px; */
+                margin: 10px;
+            }
+
+            .earth {
+                /* width: 100%; */
+                background-color: #00142d;
+
+            }
+
+            .heap {
+                /* width: 50%; */
+                display: flex;
+                flex-direction: row;
+                margin: auto;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .fa-solid {
+                color: rgb(245, 238, 238);
+                width: 20px;
+            }
+
+            .login {
+                color: rgb(252, 248, 248);
+                margin: 10px;
+                font-size: 100%;
+            }
+
+            .hb {
+                display: none;
+            }
+
+
+            .function .system {
+                width: 27%;
+            }
+
+
+            /* 第十三橫列 */
+            .bonny-read {
+                /* width: 1200px; */
+                margin: auto;
+                /*置中*/
+                display: flex;
+                flex-direction: row;
+                /*檢查用*/
+            }
+
+
+            .bonny-email {
+                /* width: 600px; */
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .bonny-email a {
+                display: block;
+                margin: 20px;
+
+            }
+
+            .bonny-email p {
+                margin: 20px;
+                font-size: 10px;
+                color: #000;
+            }
+
+            .bonny-email .bonny {
+                display: block;
+                margin-top: 100px;
+                color: #000;
+            }
+
+            .bonny-email img {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+
+            .footend .menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                color: rgb(248, 244, 244);
+            }
+
+            .footend .menu .item {
+                margin: 0px;
+            }
+
+            /* 第一清單 */
+            /* #shoplne:checked~ul {
+                display: none;
+            } */
+
+            #shoplne~ul {
+                display: block;
+            }
+
+            .shoplne-label {
+                display: block;
+
+            }
+
+            .shoplne-label span {
+                display: none;
+            }
+
+            .shoplne-label span img {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+
+            /* 第二清單 */
+            /* #open:checked~ul {
+                display: none;
+            } */
+
+            #open~ul {
+                display: block;
+            }
+
+            .open-label {
+                display: block;
+
+            }
+
+            .open-label span {
+                display: none;
+            }
+
+            .open-label span img {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+
+            /* 第三清單 */
+            /* #feature:checked~ul {
+                display: none;
+            } */
+
+            #feature~ul {
+                display: block;
+            }
+
+            .feature-label {
+                display: block;
+
+            }
+
+            .feature-label span {
+                display: none;
+            }
+
+            .feature-label span img {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+
+            /* 第四清單 */
+            /* #resource:checked~ul {
+                display: none;
+            } */
+
+            #resource~ul {
+                display: block;
+            }
+
+            .resource-label {
+                display: block;
+
+            }
+
+            .resource-label span {
+                display: none;
+            }
+
+            .resource-label span img {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+
+            /* 第五清單 */
+            /* #solution:checked~ul {
+                display: none;
+            } */
+
+            #solution~ul {
+                display: block;
+            }
+
+            .solution-label {
+                display: block;
+
+            }
+
+            .solution-label span {
+                display: none;
+            }
+
+            .solution-label span img {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+
+            /* 第六清單 */
+            /* #other:checked~ul {
+                display: none;
+            } */
+
+            #other~ul {
+                display: block;
+            }
+
+            .other-label {
+                display: block;
+
+            }
+
+            .other-label span {
+                display: none;
+            }
+
+            .other-label span img {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+
+            /* 第七清單 */
+            /* #case:checked~ul {
+                display: none;
+            } */
+
+            #case~ul {
+                display: block;
+            }
+
+            .case-label {
+                display: block;
+
+            }
+
+            .case-label span {
+                display: none;
+            }
+
+            .case-label span img {
+                width: 20px;
+                height: 20px;
+                margin: auto;
+            }
+
+
+            .covid-19 {
+                display: block;
+                width: 300px;
+                margin: 0px 0px 0px auto;
+                text-align: center;
+                color: #000;
+                text-decoration: none;
+                background-color: rgb(219, 248, 237);
+            }
+
+
+
+            /* 第十二橫列 */
+
+            .popularity{
+                display: flex;
+            }
+
+            .popularity ul{
+                display: flex;
+                /* flex-wrap: wrap; */
+                flex-direction: row;
+            }
+            .popularity ul li{
+                width: calc(100% / 5 - 10 );
+                padding: 5px;
+            }
+            .popularity ul li img{
+                width: 100%;
+            }
+
+
+
+
+
+            /* 第十四之三橫列*/
+            .private {
+                /* width: 1200px; */
+                display: flex;
+                margin: auto;
+                /* padding: 10px; */
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .web {
+                /* width: 400px; */
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                line-height: 50px;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .web .item {
+                display: block;
+                margin: auto;
+            }
+
+            .web .item a {
+                text-decoration: none;
+                border-left-width: 1px;
+                border-left-style: solid;
+                border-left-color: rgb(255, 255, 255);
+                color: rgb(255, 253, 253);
+                padding: 0px 10px 0px;
+            }
+
+            .web .item .link-c {
+                border-left: none;
+            }
+
+
+            .community {
+                display: flex;
+                order: 0;
+                padding: 10px;
+                margin: 10px;
+
+            }
+
+            .community a {
+                width: 30px;
+                height: 30px;
+                margin: 5px;
+                /* margin-bottom: 150px; */
+                border-radius: 6em;
+                color: rgb(250, 248, 248);
+                background-color: #172b4d;
+            }
+
+            .community a .fa-brands {
+                display: flex;
+                justify-content: center;
+                margin-top: 5px;
+            }
+
+            .community a .fa-solid {
+                display: flex;
+                justify-content: center;
+                margin-left: 5px;
+                margin-top: 5px;
+            }
+
+            .time {
+                padding: 10px;
+                margin: 10px;
+                color: rgba(255, 255, 255, 0.4);
+            }
+
+
+
+        }
+
+        /*桌機畫面*/
+        @media screen and (min-width:1200px) {
+            .container {
+                top: 98px;
+            }
+
+            .benner {
+
+                top: 100px;
+            }
+
+            .row {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .email-changed {
+                /* width: 400px; */
+                margin: 10px;
+                display: flex;
+                /* flex-direction: column; */
+            }
+
+            .email-changed .input-email {
+                background: unset;
+                /*不要有背景*/
+                border: none;
+                width: 300px;
+                margin: 0px 50px;
+                border-bottom: solid white;
+            }
+
+
+            .main-nav .free {
+                display: inline-block;
+                flex-direction: row;
+                padding: 10px 20px;
+                margin-left: 100px;
+                /* margin-top: 43px; */
+                font-size: 20px;
+            }
+
+            /* button {
+            color: rgb(249, 249, 250);
+            border-radius: 5px;
+            background-color: #0061ff;
+            margin: 20px;
+            display: block;
+            padding: 10px;
+        } */
+
+
+            .function .system {
+                width: 27%;
+            }
+
+
+
+            .covid-19 {
+                /* display: flex; */
+                /* margin-right: 20px; */
+                /* margin: auto; */
+                /* padding: 20px 30px; */
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="earth">
+            <div class="heap">
+                <i class="fa-solid fa-globe"></i>
+                <span class="login">|</span>
+                <span class="login">幫助中心</span>
+                <span class="login">登入網店</span>
+            </div>
+        </div>
+
+
+        <input type="checkbox" name="" id="menu_control">
+        <div class="main-header-bgc">
+            <div class="main-header">
+                <div class="logo">
+                    <img src="https://img.shoplineapp.com/media/image_clips/60811bb98a60d74a03808d4d/original.png?1619073977"
+                        alt="shopline">
+                </div>
+
+                <label for="menu_control" class="hb">
+
+                </label>
+
+                <div class="main-nav">
+                    <a href="#">開店服務</a>
+                    <a href="#">方案費用</a>
+                    <a href="#">客戶案例</a>
+                    <a href="#">開店說明會</a>
+                    <a href="#">開店諮詢</a>
+                    <a href="#">更多解決方案</a>
+                    <a href="#">其他資源</a>
+                    <button class="free">免費使用</button>
+                    <button class="in">登入</button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="benner">
+        <div class="row">
+            <!-- /*右邊*/ -->
+            <div class="col-12 col-md-12 col-lg-6 col-xl-6 ">
+                <div class="item">
+                    <h2 class="where">想在哪開店創業？</h2>
+                    <div class="pos"><br>門市必備零售 POS 系統|</div>
+                    <p>超過 35 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
+                    <div class="email-changed">
+                        <input class="input-email" type="email" placeholder="請在此輸入電子信箱 (可隨時更換)">
+                        <button>免費試用</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 左邊 -->
+            <div class="col-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="item">
+                    <img src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/6191b397e9f2f00026722389/505x.webp?source_format=png"
+                        alt="訂貨數量的顯示">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="container">
+
+        <div class="single">
+            <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+        </div>
+
+        <div class="physical-store">
+            <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+        </div>
+
+        <div class="item-grop-even">
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <img src="https://shoplineimg.com/59c0fd06080f0690b5000cd1/60b0c566ec23b10026db7112/565x.webp?source_format=png"
+                        alt="巧克力手工餅乾">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <h3 class="commerce">免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
+
+                    <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+                    <div class="list">
+                        <ul>
+                            <li><span>✔</span>豐富版型主題與字型搭配</li>
+                            <li><span>✔</span>獨有網址 ＆ SSL 安全憑證</li>
+                            <li><span>✔</span>一頁商店</li>
+
+                        </ul>
+                        <ul>
+                            <li><span>✔</span>RWD 響應式網頁設計</li>
+                            <li><span>✔</span>SEO 搜尋引擎優化</li>
+                            <li><span>✔</span>開放 HTML／CSS 編輯</li>
+                        </ul>
+                    </div>
+                    <a href="#">看看開店秘訣--></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="item-grop">
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <img src="https://img.shoplineapp.com/media/image_clips/60a4d354a8bff100235bea59/original.png?1621414740"
+                        alt="付款方式">
+                </div>
+            </div>
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <h3 class="commerce">支持海內外電商<br>金流、物流一次搞定</h3>
+                    <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+                    <div class="list">
+                        <ul>
+                            <li><span>✔</span>線上信用卡刷卡</li>
+                            <li><span>✔</span>超商代碼／條碼繳費</li>
+                            <li><span>✔</span>超商／宅配貨到付款</li>
+                        </ul>
+                        <ul>
+                            <li><span>✔</span>第三方金流／行動支付整合</li>
+                            <li><span>✔</span>多溫層宅配並指定運費</li>
+                            <li><span>✔</span>發票開立與串接</li>
+                        </ul>
+                    </div>
+                    <a href="#">了解更多金物流--></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="item-grop-even">
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <img src="https://img.shoplineapp.com/media/image_clips/60a4d354df356c0012a8a223/original.png?1621414740"
+                        alt="多元優惠活動">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <div class="various-versions">
+                        <h3 class="commerce">刺激下單，創造回購<br>行銷導流、促購模組任你玩</h3>
+
+                        <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
+                        <div class="list">
+                            <ul>
+                                <li><span>✔</span>超過 20 種優惠促銷功能</li>
+                                <li><span>✔</span>會員分級／點數／購物金</li>
+                                <li><span>✔</span>Instagram 購物功能</li>
+                            </ul>
+                            <ul>
+                                <li><span>✔</span>社群直播購物系統</li>
+                                <li><span>✔</span>Facebook／Google／LINE 廣告追蹤</li>
+                                <li><span>✔</span>Facebook／Instagram／LINE 對話式購物</li>
+                            </ul>
+                        </div>
+                        <a href="#">看更多優惠模組 --></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="item-grop">
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <img src="https://img.shoplineapp.com/media/image_clips/60a4d3540289ef002f2150cb/original.png?1621414740"
+                        alt="全通路無縫整併">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+                <div class="various-versions">
+                    <h3 class="commerce">O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h3>
+
+                    <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
+                    <div class="list">
+                        <ul>
+                            <li><span>✔</span>門市 POS 系統</li>
+                            <li><span>✔</span>門市快速集客工具</li>
+                            <li><span>✔</span>進銷庫存／調撥／多店管理</li>
+                        </ul>
+                        <ul>
+                            <li><span>✔</span>線上線下會員／商品／庫存整合</li>
+                            <li><span>✔</span>O2O 即時銷售報表分析</li>
+                            <li><span>✔</span>串接 Shopee 蝦皮購物庫存</li>
+                        </ul>
+                    </div>
+                    <a href="#">了解更多全通路整合--></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+
+        <div class="more">
+            <div class="meany">
+                <h2>更多功能與服務</h2>
+            </div>
+            <div class="function .col-6 .col-md-4 .col-lg-4 .col-xl-4">
+                <div class="system">
+                    <div class="system-serve">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5efef5c3b774cf002ab000ce/original.png?1593767363"
+                            alt="強大庫存及訂單系統">
+                    </div>
+                    <h3 class="six">強大庫存及訂單系統</h3>
+                    <p class="six">從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+                </div>
+                <div class="system">
+                    <div class="system-serve">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5efef5c4b774cf0027b00084/original.png?1593767364"
+                            alt="即時化商店業績分析">
+                    </div>
+
+                    <h3 class="six">即時化商店業績分析</h3>
+                    <p class="six">圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+                </div>
+                <div class="system">
+                    <div class="system-serve">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e10225e00039a716b9/original.png?1597285089"
+                            alt="多國語系、幣值切換">
+                    </div>
+
+                    <h3 class="six">多國語系、幣值切換</h3>
+                    <p class="six">想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+                </div>
+                <div class="system">
+                    <div class="system-serve">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089"
+                            alt="專業顧問線上支援">
+                    </div>
+
+                    <h3 class="six">專業顧問線上支援</h3>
+                    <p class="six">迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+                </div>
+                <div class="system">
+                    <div class="system-serve">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089"
+                            alt="廣告行銷加值服務">
+                    </div>
+
+                    <h3 class="six">廣告行銷加值服務</h3>
+                    <p class="six"> 由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+                </div>
+                <div class="system">
+                    <div class="system-serve">
+                        <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e16200760045e6138f/original.png?1597285089"
+                            alt="老闆專屬成長社群">
+                    </div>
+                    <h3 class="six">老闆專屬成長社群</h3>
+                    <p class="six">致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 五張圖 -->
+        <div class="pop">
+            <p>人氣品牌一致推薦使用</p>
+        </div>
+
+        <div class="popularity">
+            <ul>
+                <li>
+                    <img src="https://picsum.photos/240/200/?random=1">
+                </li>
+                <li>
+                    <img src="https://picsum.photos/240/200/?random=10">
+                </li>
+                <li>
+                    <img src="https://picsum.photos/240/200/?random=11">
+                </li>
+                <li>
+                    <img src="https://picsum.photos/240/200/?random=12">
+                </li>
+                <li>
+                    <img src="https://picsum.photos/240/200/?random=18">
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="col-12 col-md-12 ">
+            <div class="bonny-read">
+                <div class="bonny-email">
+                    <a href="">bonnyread.com.tw -></a>
+                    <p>SHOPLINE 在行動裝置上操作的順暢很高;使用者給的建議與意見採納，處理的速度也不錯;還一直有新功能推出，不斷成長</p>
+                    <p class="bonny">-BONNY & READ 店長,Stan</p>
+                </div>
+                <div class="bonny-email">
+                    <img src="https://img.shoplineapp.com/media/image_clips/5f06bed2436e2b86c4471215/original.jpg?1594277585"
+                        alt="bonny-email">
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer class="footer">
+        <div class="asia">
+            <div class="brand-usage">
+                <h3>全亞洲超過<br>350,000 個品牌都在使用SHOPLINE</h3>
+                <a href="#">免費試用14天</a>
+            </div>
+        </div>
+
+
+
+        <div class="footend">
+            <!-- <hr>    /*加一條線*/ -->
+            <hr>
+            <div class="menu">
+
+                <div class="item">
+                    <input type="checkbox" name="shoplne" id="shoplne">
+                    <label for="shoplne" class="shoplne-label">
+                        <h4>SHOPNLIE </h4>
+                        <span><img src="./圖片1.png" alt="v"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <a href="#">關於我們</a>
+                        </li>
+                        <li>
+                            <a href="#">認識團隊</a>
+                        </li>
+                        <li>
+                            <a href="#">人才招募</a>
+                        </li>
+                        <li>
+                            <a href="#">合作機會</a>
+                        </li>
+                        <li>
+                            <a href="#">精選夥伴</a>
+                        </li>
+                        <li>
+                            <a href="#">媒體報導</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <input type="checkbox" name="" id="open">
+                    <label for="open" class="open-label">
+                        <h4>我要開店</h4>
+                        <span><img src="./圖片1.png" alt="v"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <a href="#">方案費用</a>
+                        </li>
+                        <li>
+                            <a href="#">功能模組</a>
+                        </li>
+                        <li>
+                            <a href="#">客戶案例</a>
+                        </li>
+                        <li>
+                            <a href="#">開店說明會</a>
+                        </li>
+                        <li>
+                            <a href="#">開店諮詢</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <input type="checkbox" name="" id="feature">
+                    <label for="feature" class="feature-label">
+                        <h4>功能特色</h4>
+                        <span><img src="./圖片1.png" alt="v"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <a href="#">網路開店</a>
+                        </li>
+                        <li>
+                            <a href="#">社群購物</a>
+                        </li>
+                        <li>
+                            <a href="#">零售</a>
+                        </li>
+                        <li>
+                            <a href="#">網路商店</a>
+                        </li>
+                        <li>
+                            <a href="#">網路製作</a>
+                        </li>
+                        <li>
+                            <a href="#">電商物流</a>
+                        </li>
+                        <li>
+                            <a href="#">訂單管理</a>
+                        </li>
+                        <li>
+                            <a href="#">一頁商店</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <input type="checkbox" name="" id="resource">
+                    <label for="resource" class="resource-label">
+                        <h4>開店資源</h4>
+                        <span><img src="./圖片1.png" alt="v"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <a href="#">開店秘技</a>
+                        </li>
+                        <li>
+                            <a href="#">版型主題</a>
+                        </li>
+                        <li>
+                            <a href="#">新手問答</a>
+                        </li>
+                        <li>
+                            <a href="#">POS 硬體</a>
+                        </li>
+                        <li>
+                            <a href="#">最新功能</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <input type="checkbox" name="" id="solution">
+                    <label for="solution" class="solution-label">
+                        <h4>更多解決方案</h4>
+                        <span><img src="./圖片1.png" alt="v"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <a href="#">企業旗艦方案</a>
+                        </li>
+                        <li>
+                            <a href="#">跨境電商方案</a>
+                        </li>
+                        <li>
+                            <a href="#">廣告計畫方案</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <input type="checkbox" name="" id="other">
+                    <label for="other" class="other-label">
+                        <h4>其他資源</h4>
+                        <span><img src="./圖片1.png" alt="v"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <a href="#">電商教室</a>
+                        </li>
+                        <li>
+                            <a href="#">充電工作坊</a>
+                        </li>
+                        <li>
+                            <a href="#">DreamBig 創品牌</a>
+                        </li>
+                        <li>
+                            <a href="#">電商成長學苑</a>
+                        </li>
+                        <li>
+                            <a href="#">SHOPLINE TRENDS 電商數據庫</a>
+                        </li>
+                        <li>
+                            <a href="#">LINE 官方帳號</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <input type="checkbox" name="" id="case">
+                    <label for="case" class="case-label">
+                        <h4>其他資源</h4>
+                        <span><img src="./圖片1.png" alt="v"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <a href="#">金流與物流</a>
+                        </li>
+                        <li>
+                            <a href="#">SHOPLINE Payments</a>
+                        </li>
+                        <li>
+                            <a href="#">網紅口碑行銷方案</a>
+                        </li>
+                        <li>
+                            <a href="#">實體零售</a>
+                        </li>
+                        <li>
+                            <a href="#">IG 直播 +1</a>
+                        </li>
+                        <li>
+                            <a href="#">社群電商工具包</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="covid-19">COVID-19 應變措施</a>
+            <hr>
+            <div class="private">
+                <div class="membership-terms">
+                    <ul class="web">
+                        <li class="item"><a class="link-c" href="">網站地圖</a></li>
+                        <li class="item"><a class="link" href="">隱私權政策</a></li>
+                        <li class="item"><a class="link" href="">會員條款</a></li>
+                    </ul>
+                </div>
+
+                <div class="community">
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-solid fa-comment-dots"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+
+                <div class="time">
+                    服務時間 星期一至五 上午 10 點至晚上 7 點<br>© Copyright 2013-22 SHOPLINE Limited.
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </footer>
+
+
+
+
+
+</body>
+
+</html>
