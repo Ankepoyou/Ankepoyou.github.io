@@ -1,0 +1,59 @@
+header .home {
+    background-color: #7952b3;
+}
+.boostrap-pic{
+    width: 50px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.boostrap-pic a img{
+    width: 100%;
+}
+
+.adobe{
+    display: flex;
+    margin: 10px;
+}
+
+.adobe-pic {
+    width: 100%;
+    padding: 10px;
+}
+.adobe p{
+    display: flex;
+    flex-direction: column;
+}
+
+.col{
+    padding: 10px 10px;
+}
+.rtl{
+    padding: 30px;
+}
+
+.Anke ul li a i,span{
+    color: rgb(250, 246, 246);
+}
+
+
+
+/* 手機畫面 */
+@media screen and (max-width:767px) {
+    .Anke ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .Anke ul li{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .Anke ul li a span{
+        display: none;
+    }
+}
+
+
+
