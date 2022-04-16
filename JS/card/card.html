@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .picturestyle{
+            width: 960px;
+            height: 900px;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        #movie img{
+            width: 320px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="me-pic">
+
+            <div class="my-Mobis">
+                <img id="imagel" src="" alt="">
+            </div>
+
+            <div id="my">
+                <h2>姓名:</h2>
+                <p id="name"></p>
+                <h2>信箱:</h2>
+                <p id="email"></p>
+                <h2>學校:</h2>
+                <p id="school"></p>
+                <h2>興趣:</h2>
+                <p id="Interest"></p>
+            </div>
+
+        </div>
+
+        <div id="movie"></div>
+    </div>
+
+
+    <!-- <img id="imagel" src="" alt=""> -->
+        
+
+    <script>
+        
+        let img = document.getElementById("imagel");
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let school = document.getElementById("school");
+        let Interest = document.getElementById("Interest");
+        let movie = document.getElementById("movie");
+        
+
+        const movieUrl ="https://p2.bahamut.com.tw/B/2KU/66/766d8e355c184cbc4ca4cac2771evx25.JPG?v=1641288533322";//圖片
+        img.src= movieUrl;
+        
+        img.setAttribute("class", "picturestyle");
+
+
+        name.innerText=" 陳柏宇";
+        email.innerText=" poyouanke@gmail.com";
+        school.innerText=" 中華大學";
+        Interest.innerText=" 羽球";
+        // p.setAttribute("name", $);
+
+        document.write("<br>");//換行
+
+        
+
+        const imageArray = [
+            "https://raw.githubusercontent.com/Ankepoyou/FileStorage/main/pic1.jpg",
+            "https://images.vocus.cc/4b3552c7-88a3-4e80-bcc0-5f86655f8bd6.jpg",
+            "https://raw.githubusercontent.com/Ankepoyou/FileStorage/main/pic3.jpg",
+
+        ];
+
+
+            // 用字串插植
+        imageArray.forEach((url, index)=>{
+                // document.write(`<img  src="${url}">` + "<br>");
+                movie.innerHTML += `<img  src="${url}">` ;
+
+
+        });
+
+    </script>
+</body>
+</html>
