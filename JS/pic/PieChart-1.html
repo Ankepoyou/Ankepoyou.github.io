@@ -75,88 +75,69 @@
             //     data[index] = marketingShare.data[index].Ratio
             // }
 
-
             drawPieChart(companies, data);
 
             //作業表格標題
+            //第一步做宣告
             let container;
             let table, thead, tbody;
 
+            //第二步先抓到上面HTML裡所建立的裡面空的table標籤所設的id
             container = document.getElementById("table1");
 
-
+            //第三步用createElement()方式在HTML裡 創 table thead tbody標籤 節點，在分別用變數存入
             table = document.createElement("table");
             thead = document.createElement("thead");
             tbody = document.createElement("tbody");
 
+            //第四步設定表格樣式
             table.setAttribute("class", "table table-bordered table-striped table-dark");
 
-            //1.建立Thead
-            //(1)建立tr
-            //(2)建立th,設定資料,th加入tr
-            //(3)將tr加入Thead
-            //(4)將Thead加入Table
-
+            //第五步建立Thead區
+            //第五之一步創建tr，用變數存入，把tr宣告在forEach外，是因為一個表格Thead區只有一個tr
             let theadTR = document.createElement("tr");
 
+            //第五之二步用forEach把marketingShare裡的titles列出來
             marketingShare.titles.forEach((title, index) => {
+                //第五之三步創建th，用變數存入
                 let th = document.createElement("th");
+                //第五之四步把title的內容用innerText轉換成存文字
                 th.innerText = title;
+                //第五之五步在tr裡加入th
                 theadTR.append(th);
             });
-
+            //第五之六步在thead裡加入tr
             thead.append(theadTR);
+            //第五之七步在table裡加入thead
             table.append(thead);
+            //第五之八步把一開始在HTML建的標籤裡加入thead
             container.append(table);
 
-            CreateTbody(marketingShare.data);
-            function CreateTbody(temp) {
-                temp.forEach((temp1) => {
-                    let tr = document.createElement("tr");
-                    let valueArray = Object.values (temp1) ;
-                    // let td_Ranking = document.createElement("td");
-                    // let td_Name = document.createElement("td");
-                    // let td_Country = document.createElement("td");
-                    // let td_Ratio = document.createElement("td");
 
-
-                    // td_Ranking.innerText = temp1.Ranking;
-                    // td_Name.innerText = temp1.Name;
-                    // td_Country.innerText = temp1.Country;
-                    // td_Ratio.innerText = temp1.Ratio;
-
-                    // tr.appendChild(td_Ranking);
-                    // tr.appendChild(td_Name);
-                    // tr.appendChild(td_Country);
-                    // tr.appendChild(td_Ratio);
-
-                    valueArray.forEach((columndata) => {
-                        let td = document.createElement('td');
-                        td.innerText = columndata;
-                        tr.append(td);
-                    });
-
-                    tbody.appendChild(tr);
+            //第六步建立Tbody區
+            //用forEach把marketingShare裡的data列出來
+            marketingShare.data.forEach((temp1) => {
+                //第七步創建tr，用變數存入，把tr宣告在forEach內，是因為一個表格Tbody區可以有多個tr
+                let tr = document.createElement("tr");
+                //第八步因為物件要取值的話要用 .values 才能取到值，而取出來的東西是一個陣列
+                let valueArray = Object.values(temp1);
+                //第九步把上一步取出的值陣列，做forEach把它列出來
+                valueArray.forEach((columndata) => {
+                    //第十步創建td，用變數存入
+                    let td = document.createElement('td');
+                    //第十一步把columndata的內容用innerText轉換成存文字
+                    td.innerText = columndata;
+                    //第十二步在tr裡加入td
+                    tr.append(td);
                 });
 
-                // let table = document.querySelector("table");
-                table.appendChild(tbody);
-            }
+                //第十二步在tbody裡加入tr
+                tbody.appendChild(tr);
+            });
 
-
-
-
+            //第十三步在table裡加入tbody
+            table.appendChild(tbody);
         }
-
-
-
-
-
-
-
-
-
-
     </script>
 
     <script>
