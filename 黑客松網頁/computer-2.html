@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>ultimate password</title>
+</head>
+
+<body>
+    <div class="container" style="max-width: 960px;">
+        <div class="d-grid gap-2 col-12 mx-auto">
+            <input type="text"  id="password" class=" border border-dark">
+            <!-- <input type="text" id="password" class=" border border-dark" ></input> -->
+        </div>
+    </div>
+
+    <div class="container mx-auto" style="max-width: 960px;">
+        <div class="row mx-auto">
+            <div class="col-6" style="display: flex;">
+                <button id="btn_clear" type="button" class="btn btn-danger my-2 w-100">c</button>
+            </div>
+            <div class="col-3" style="display: flex;">
+                <button id="btn_back" type="button" class="btn btn-warning my-2 w-100">></button>
+            </div>
+
+            <div class="col-3" style="display: flex;">
+                <button id="btn_plus" type="button" class="btn btn-primary my-2 w-100">+</button>
+            </div>
+        </div>
+
+        <div class="row mx-auto">
+            <div class="col-3" style="display: flex; flex-direction: column; padding: 10px;">
+                <button  type="button" class="btn btn-dark my-2 btn_number">1</button>
+                <button  type="button" class="btn btn-dark my-2 btn_number">4</button>
+                <button  type="button" class="btn btn-dark my-2 btn_number">7</button>
+                <button type="button" id="percentage" class="btn btn-success my-2">=</button>
+            </div>
+            <div class="col-3" style="display: flex; flex-direction: column; padding: 10px;">
+                <button  type="button" class="btn btn-dark my-2 btn_number">2</button>
+                <button  type="button" class="btn btn-dark my-2 btn_number">5</button>
+                <button  type="button" class="btn btn-dark my-2 btn_number">8</button>
+                <button  type="button" class="btn btn-dark my-2 btn_number">0</button>
+            </div>
+            <div class="col-3" style="display: flex; flex-direction: column; padding: 10px;">
+                <button  type="button" class="btn btn-dark my-2 btn_number">3</button>
+                <button  type="button" class="btn btn-dark my-2 btn_number">6</button>
+                <button  type="button" class="btn btn-dark my-2 btn_number">9</button>
+                <button id="point" type="button" class="btn btn-info my-2">.</button>
+            </div>
+            <div class="col-3" style="display: flex; flex-direction: column; padding: 10px;">
+                <button id="reduce" type="button" class="btn btn-primary my-2">-</button>
+                <button id="take" type="button" class="btn btn-primary my-2">x</button>
+                <button id="division" type="button" class="btn btn-primary my-2">/</button>
+                <button id="persan" type="button" class="btn btn-primary my-2">%</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let btn_clear,point,percentage,back,password;
+        let plus,reduce,take,division,persan;
+        let btn_number;
+
+        window.onload = function () {
+
+
+            btn_clear = document.getElementById("btn_clear");
+            percentage = document.getElementById("percentage");
+            point = document.getElementById("point");
+            back = document.getElementById("btn_back");
+            password=document.getElementById("password");
+
+            plus = document.getElementById("btn_plus");
+            reduce = document.getElementById("reduce");
+            take = document.getElementById("take");
+            division = document.getElementById("division");
+            persan = document.getElementById("persan");
+
+            btn_number = document.querySelectorAll(".btn_number");
+            
+
+            //每點及一次就清除一個最尾端值
+            back.addEventListener("click", function () {
+                //slice();意思是只取陣列某段範圍值
+                //slice(0, password.value.length-1);意思是去除陣列最尾端的值
+                password.value =  password.value.slice(0, password.value.length-1);
+                
+            });
+
+            //清除全部
+            btn_clear.addEventListener("click", function () {
+                clearall();
+            });
+            function clearall(){
+
+                password.value = "";
+            }
+
+
+            //數字
+            btn_number.forEach(element => {
+                
+                element.addEventListener("click", function (event) {
+                    number();
+                });
+            });
+
+            
+            
+            
+            //等於
+            percentage.addEventListener("click", function () {
+                sum();
+            });
+            
+            function sum(){
+                //eval();自動計算 算術表達式
+                password.value = eval(password.value);
+            }
+            
+            //點
+            point.addEventListener("click", function (event) {
+                number();
+            });
+
+            //加
+            plus.addEventListener("click", function (event) {
+                number();
+            });
+            
+            function add(){
+                password.value=eval(password.value);
+            }
+            //減
+            reduce.addEventListener("click", function (event) {
+                number();
+            });
+            //乘
+            take.addEventListener("click", function (event) {
+                number();
+            });
+            //除
+            division.addEventListener("click", function (event) {
+                number();
+            });
+            //%
+            persan.addEventListener("click", function (event) {
+                number();
+            });
+            
+            //把點擊的數字或符號輸出到畫面上
+            function number(){
+                let add = event.target.innerText;
+                password.value += add;
+            }
+            
+
+            
+        }
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
+
