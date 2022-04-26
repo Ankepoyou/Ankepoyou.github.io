@@ -115,8 +115,7 @@
             guess_num = document.getElementById("button-addon2");
             input_num = document.querySelector(".form-control");
             check = document.querySelector(".check");
-
-            
+-
 
             //開始按鈕
             btn_start.addEventListener("click", function () {
@@ -190,12 +189,12 @@
                     _a_b.setAttribute("style", "background-color: yellow;");
                 }
 
-                //顯示使用者輸入的數字區
+                //顯示使用者輸入的數字區    
                 //創一個 div標籤 節點
                 let ans = document.createElement("div");
                 //設定一個類別名稱，然後去上面的style區設定CSS樣式
                 ans.setAttribute("class", "ans");
-                //在ans寫入使用者輸入的數字轉純文字，b-a條件 幾a幾b，幾加幾不能大於四。
+                //在ans寫入使用者輸入的數字轉純文字
                 ans.innerText = input_num.value;
                 //把ans，加入到show
                 show.appendChild(ans);
@@ -213,9 +212,10 @@
                 location.reload();
             });
 
-            //開始按鈕區
+            //看答案按鈕區
             btn_see_ans.addEventListener("click", function () {
-                alert(`答案是${random_ans}`);
+                //random_ans轉成字串型態，在用replace(/要移除的符號/g,"要新增的符號")，g的意思是選取到全部要移除的符號。
+                alert(`答案是${random_ans.toString().replace(/,/g,"")}`);
             });
 
         }
