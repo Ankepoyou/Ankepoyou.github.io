@@ -26,8 +26,6 @@
 
         window.onload = function () {
             container = document.getElementById("container");
-
-
             appendPokemon();
 
         }
@@ -51,6 +49,8 @@
             container.innerHTML = pokemonImg;
         }
 
+
+        //Load All
         function allPokemon() {
             for (let i = 1; i < 898; i++) {
                 let fileName = i.toString().padStart(3, "0");//padStsrt(3, "0")補零
@@ -67,6 +67,8 @@
             }
         }
 
+
+        //Click +1按鈕
         let i = 1;
         // //方法1
         // function AddPokemon() {
@@ -108,7 +110,7 @@
 
 
         
-
+        //Clear -1按鈕
         // //方法1
         // function removePokemon() {
         //     container.removeChild(container.lastChild);
@@ -126,6 +128,8 @@
             container.removeChild(container.lastChild);
         });
 
+
+        //reset按鈕
         // // //方法1
         // function resetPokemon() {
 
