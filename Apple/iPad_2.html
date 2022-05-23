@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a1fb0537ef.js" crossorigin="anonymous"></script>
+
+    <title>Apple!</title>
+
+    <style>
+        .heard {
+            background: #000;
+        }
+
+        .nav_ber {
+            margin: auto;
+        }
+
+        .product {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product a {
+            display: flex;
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+
+        }
+
+        .introduce {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+        }
+
+        .pic {
+            width: 50%;
+        }
+
+        .pic{
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+
+
+        .text {
+            width: 50%;
+
+        }
+
+        .ipad_air_pic {
+            display: flex;
+            flex-direction: row;
+            /* justify-content: center;
+            align-items: center; */
+        }
+
+        .ipad_air_title_p{
+            color: rgb(253, 6, 6);
+            font-size: 30px;
+        }
+
+        .ipad_air_title_h3{
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+
+
+        .ipad_air_color {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .ipad_air_color_h2{
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+        }
+
+        
+
+        .ipad_air_color_pic {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            background-color: rgb(248, 250, 251);
+            /* padding: 10px; */
+            margin: 10px;
+            border-radius: 10px;
+            border:  1px solid blue;
+        }
+
+        .ipad_air_color_pic_bgc{
+            background-color: rgb(2, 254, 250);
+        }
+
+
+        /* .ipad_air_color_pic:hover {
+            background-color: rgb(252, 252, 145);
+            border:  3px solid red;
+        } */
+
+        .ipad_air_color_img {
+            width: 100px;
+            margin: auto;
+        }
+
+        .ipad_air_color_pic_p{
+            margin: auto;
+        }
+
+        /* 容量區 */
+        .ipad_air_Specification_h2{
+            font-weight: bold;
+        }
+
+        .ipad_air_Specification{
+            display: flex;
+            /* height: 20%; */
+            /* font-weight: bold; */
+        }
+
+        .ipad_air_Specification_btn_h3{
+            margin: 10px auto;
+            font-weight: bold;
+        }
+
+        .ipad_air_Specification_btn_p{
+            margin: 10px auto;
+            /* font-weight: bold; */
+        }
+
+        .ipad_air_Specification_btn{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            background-color: #fff;
+            /* padding: 10px; */
+            margin: 10px;
+            border-radius: 10px;
+            border:  1px solid blue;
+        }
+
+        .ipad_air_Specification_btn_bgc{
+            background-color: rgb(2, 254, 103);
+        }
+        /* .ipad_air_Specification_btn:hover{
+            background-color: rgb(179, 250, 191);
+            border:  3px solid red;
+        } */
+
+        /* WiFi區 */
+        .ipad_air_WiFi_h2{
+            font-weight: bold;
+        }
+
+        .ipad_air_WiFi{
+            display: flex;
+            
+        }
+
+        .ipad_air_WiFi_btn{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            background-color: #fff;
+            /* padding: 10px; */
+            margin: 10px;
+            border-radius: 10px;
+            border:  1px solid blue;
+        }
+
+        .ipad_air_WiFi_btn_bgc{
+            background-color: rgb(2, 252, 110);
+        }
+        /* .ipad_air_WiFi_btn:hover{
+            background-color: rgb(250, 179, 236);
+            border:  3px solid red;
+        } */
+
+        .ipad_air_WiFi_btn_h3{
+            font-weight: bold;
+            margin: auto;
+        }
+
+        /* 價錢區 */
+        .ipad_air_Price_h2{
+            font-weight: bold;
+        }
+
+        .ipad_air_Price_p{
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="heard">
+        <nav class="navbar navbar-expand-lg navbar-light   nav_ber" style="max-width: 1200px">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="color: white;" href="#"><i class="fa-brands fa-apple"></i></a>
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="#">商店</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">iPad Air</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-white" href="#">MacPro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled  text-white">iPhone</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><i
+                                class="fa-solid fa-bag-shopping"></i></button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="product">
+
+        <div class="row">
+            <div class="col ipad_air d-flex flex-column align-items-center ">
+                <a class="chapternav-link text-center  " href="#">
+                    <img src="./ipad_AIR.jpg" alt="ipad_AIR">
+                </a>
+                <a class="chapternav-link " href="#">
+                    <span class="chapternav-label">iPad Air</span>
+                </a>
+                <a class="chapternav-link " href="#">
+                    <span class="chapternav-new">全新</span>
+                </a>
+            </div>
+
+            <div class="col MacPro d-flex flex-column align-items-center">
+                <a class="chapternav-link " href="#">
+                    <img src="./MacPro.jpg" alt="MacPro">
+                </a>
+                <a class="chapternav-link " href="#">
+                    <span class="chapternav-label">MacPro</span>
+                </a>
+                <a class="chapternav-link " href="#">
+                    <span class="chapternav-new">全新</span>
+                </a>
+            </div>
+
+            <div class="col iphone d-flex flex-column align-items-center">
+                <a class="chapternav-link " href="#">
+                    <img src="./iphone.jpg" alt="iphone">
+                </a>
+                <a class="chapternav-link " href="#">
+                    <span class="chapternav-label">iphone13 Pro</span>
+                </a>
+                <a class="chapternav-link " href="#">
+                    <span class="chapternav-new">全新</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="introduce">
+        <div class="pic">
+
+        </div>
+        <div class="text">
+
+        </div>
+    </div>
+
+
+
+    <!-- //這裡是遠端連線json資料區 -->
+    <script>
+        //宣告一個變數來存放用JSON.parse()方法轉換成陣列型態的資料
+        let jsdata;
+        //URL就是網址
+        const url = "https://raw.githubusercontent.com/Ankepoyou/FileStorage/main/iPard.json";
+        //第一步 創一個XMLHttpRequest()物件，用變數存起來
+        let xhr = new XMLHttpRequest();
+        //
+        xhr.onload = function () {
+            //第四步 用responseText接收資料，把回傳的JSON資料純文字，用JSON.parse()方法轉換成陣列型態的資料，用個變數存起來
+            jsdata = JSON.parse(this.responseText);
+            //console.log(this);
+            //console.log(xhr);
+        }
+        //第二步 用open()方法 加上 GET 來請求資料
+        xhr.open("GET", url);
+        //第三步 用send()送出非同步請求
+        xhr.send();
+    </script>
+
+
+    <script>
+        let introduce, pic, text;
+
+        let ipad_air, MacPro, iphone;
+
+        let ipad_air_pic,iphone_pic;
+
+        let jsdata_color;
+
+        let jsdata_storage;
+
+        let jsdata_network;
+
+
+        window.onload = function () {
+            //找出ipad_air產品超連結區的class
+            ipad_air = document.querySelector(".ipad_air");
+
+            MacPro = document.querySelector(".MacPro");
+            iphone = document.querySelector(".iphone");
+
+            introduce = document.querySelector(".introduce");
+            left_pic = document.querySelector(".pic");
+            right_text = document.querySelector(".text");
+
+
+            //ipad_air產品超連結，click事件
+            ipad_air.addEventListener("click", function () {
+                //先清空在製造，如果放在最底下的話，這樣圖片被製造出來後，會被清掉
+                //防呆，防止點擊多次產生多筆資料，所以要清空
+                left_pic.innerText = "";
+                right_text.innerText = "";
+                //防呆，防止WiFi區點擊多次產生多筆資料，所以要清空
+                ipad_air_WiFi.innerText = "";
+
+                //首頁產品圖
+                //創一個img節點
+                ipad_air_pic = document.createElement("img");
+                //在img標籤，設定一個class屬性叫 ipad_air_pic，再到上面的css處理
+                ipad_air_pic.setAttribute("class", "ipad_air_pic")
+                //在設定放入 首頁產品圖
+                ipad_air_pic.setAttribute("src", "./ipad air  pic.jpg")
+                //在設定css 
+                ipad_air_pic.setAttribute("style", "width: 100%")
+                //在把處理過的首頁產品圖，在依序放入動態所創的HTML節點結構
+                left_pic.appendChild(ipad_air_pic);
+                introduce.appendChild(left_pic);
+
+                //標題區方法
+                right_text_structure_title()
+                //呼叫顏色區方法
+                right_text_structure_Color();
+                //呼叫容量區方法
+                right_text_structure_Capacity();
+                //呼叫WiFi區方法
+                right_text_structure_WiFi();
+                //呼叫總價區方法
+                right_text_structure_Price();
+
+
+            });
+
+            //標題區方法
+            function right_text_structure_title() {
+                //ipad_air標題區
+                let ipad_air_title = document.createElement("div");
+                //在div標籤，設定一個class屬性叫 ipad_air_title，再到上面的css處理
+                ipad_air_title.setAttribute("class", "ipad_air_title")
+
+                //小標題區
+                let ipad_air_title_p = document.createElement("p");
+                //在p標籤，設定一個class屬性叫 ipad_air_title_p，再到上面的css處理
+                ipad_air_title_p.setAttribute("class", "ipad_air_title_p")
+                //在h2標籤用innerText寫入 全新 ，的內容
+                ipad_air_title_p.innerText = "全新"
+                //在把處理過的顏色標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_title_p)
+
+                //大標題區
+                let ipad_air_title_h3 = document.createElement("h3");
+                //在p標籤，設定一個class屬性叫 ipad_air_title_h3，再到上面的css處理
+                ipad_air_title_h3.setAttribute("class", "ipad_air_title_h3")
+                //在h2標籤用innerText寫入 全新 ，的內容
+                ipad_air_title_h3.innerText = "購買 iPad Air"
+                //在把處理過的顏色標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_title_h3)
+            }
+
+            //顏色區方法
+            function right_text_structure_Color() {
+                //ipad_air顏色區
+                let ipad_air_color = document.createElement("div");
+                //在div標籤，設定一個class屬性叫 ipad_air_color，再到上面的css處理
+                ipad_air_color.setAttribute("class", "ipad_air_color")
+
+                //ipad_air價錢區
+                //let ipad_air_price = document.createElement("div");
+
+                //顏色標題區
+                let ipad_air_color_h2 = document.createElement("h2");
+                //在div標籤，設定一個class屬性叫 ipad_air_color_h2，再到上面的css處理
+                ipad_air_color_h2.setAttribute("class", "ipad_air_color_h2")
+                //在h2標籤用innerText寫入 外觀 ，的內容
+                ipad_air_color_h2.innerText = "外觀"
+                //在把處理過的顏色標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_color_h2)
+
+                //顏色區
+                //總共有五筆顏色資料，所以用for把程式寫在裡面這樣可以去除重複性，不用重複以人工建五筆顏色資料
+                for (let i = 0; i <= 4; i++) {
+                    //產品顏色按鈕區
+                    //創一個button節點
+                    let ipad_air_color_pic = document.createElement("button");
+                    //在button標籤，設定一個class屬性叫 ipad_air_color_pic，再到上面的css處理
+                    ipad_air_color_pic.setAttribute("class", "ipad_air_color_pic");
+
+                    //設定一個click事件
+                    ipad_air_color_pic.addEventListener("click", function () {
+                        //宣告一個陣列，把產品顏色的圖片資料用圖片路徑一筆一筆，按造順序放入陣列裡。
+                        let colorArray = ["./ipad_air_color/ipad_air_pic_space_light.png ", "./ipad_air_color/ipad-air-select-wifi-pink.png", "./ipad_air_color/ipad-air-select-wifi-purple.png", "./ipad_air_color/ipad-air-select-wifi-blue.png", "./ipad_air_color/ipad-air-select-wifi-starlight.png"];
+                        //要清空的首頁產品圖
+                        left_pic.innerText = "";
+                        //在設定放入點選相對應的產品顏色圖，用剛宣告一個陣列colorArray的索引值來找。
+                        ipad_air_pic.setAttribute("src", colorArray[i])
+                        //在把處理過的產品顏色圖，在依序放入動態所創的HTML節點結構
+                        left_pic.appendChild(ipad_air_pic)
+                        //取得按鈕上的字，要記錄點選甚麼東西
+                        jsdata_color = jsdata.iPad_air[i].color;
+                        //呼叫價錢區方法
+                        right_text_structure_Price();
+                        
+                        //先選到所有的顏色按鈕，在來宣告一個變數把內容塞到變數裡
+                        let  ipad_air_color_pic_bgc  = document.querySelectorAll('.ipad_air_color_pic')
+
+                        //
+                        ipad_air_color_pic_bgc.forEach(x => x.classList.remove('ipad_air_color_pic_bgc'))
+                        //
+                        ipad_air_color_pic.classList.add('ipad_air_color_pic_bgc')
+                        
+
+
+                        
+                        // ipad_air_color_pic_bgc.add('ipad_air_color_pic_bg');
+
+                    });
+
+                    //顏色圖片區
+                    //創一個img節點
+                    let ipad_air_color_img = document.createElement("img");
+                    //在img標籤，設定一個class屬性叫 ipad_air_color_img，再到上面的css處理
+                    ipad_air_color_img.setAttribute("class", "ipad_air_color_img")
+                    //在img標籤，設定一個src屬性叫 圖片路徑(記得要放剛剛上面遠端取回來json資料，用索引值取到裡面的picture: 值 ，做比對)，還有一樣要把圖片下載下來
+                    ipad_air_color_img.setAttribute("src", `./ipad_air_color/${jsdata.iPad_air[i].picture}`);
+                    //在把處理過的顏色圖片，在依序放入動態所創的HTML節點結構
+                    ipad_air_color_pic.appendChild(ipad_air_color_img);
+                    ipad_air_color.appendChild(ipad_air_color_pic);
+                    right_text.appendChild(ipad_air_color);
+                    introduce.appendChild(right_text);
+
+                    //顏色文字區
+                    //創一個p節點
+                    let ipad_air_color_pic_p = document.createElement("p");
+                    //在p標籤，設定一個class屬性叫 ipad_air_color_pic_p，再到上面的css處理
+                    ipad_air_color_pic_p.setAttribute("class", "ipad_air_color_pic_p");
+                    //抓取json資料的color: 值，的顏色文字
+                    ipad_air_color_pic_p.innerText = jsdata.iPad_air[i].color;
+
+                    //在把處理過的顏色文字，在依序放入動態所創的HTML節點結構
+                    ipad_air_color_pic.appendChild(ipad_air_color_pic_p);
+                    ipad_air_color.appendChild(ipad_air_color_pic);
+                    right_text.appendChild(ipad_air_color);
+                    introduce.appendChild(right_text);
+                }
+            }
+
+            let ipad_air_Specification_btn_Array;
+            
+            //容量區方法
+            function right_text_structure_Capacity() {
+                //ipad_air容量區
+                let ipad_air_Specification = document.createElement("div");
+                //在h2標籤，設定一個class屬性叫 ipad_air_Specification，再到上面的css處理
+                ipad_air_Specification.setAttribute("class", "ipad_air_Specification");
+
+                //容量標題區
+                let ipad_air_Specification_h2 = document.createElement("h2");
+                 //在h2標籤，設定一個class屬性叫 ipad_air_Specification_h2，再到上面的css處理
+                ipad_air_Specification_h2.setAttribute("class", "ipad_air_Specification_h2");
+                //在h2標籤用innerText寫入 儲存裝置 ，的內容
+                ipad_air_Specification_h2.innerText = "儲存裝置"
+                //在把處理過的容量標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_Specification_h2)
+
+                //容量文字介紹區
+                let ipad_air_Specification_p = document.createElement("p");
+                //在p標籤，設定一個class屬性叫 ipad_air_Specification_p，再到上面的css處理
+                ipad_air_Specification_p.setAttribute("class", "ipad_air_Specification_p");
+                //在p標籤用innerText寫入 儲存裝置 ，的內容
+                ipad_air_Specification_p.innerText = "提前為日後預留空間。你的 iPad Air 儲存空間愈大， 你就有愈多空間儲存數位內容，滿足今日所需，也滿足未來需求。"
+                //在把處理過的容量標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_Specification_p)
+
+                //容量區
+                //總共有兩筆容量資料，所以用for把程式寫在裡面這樣可以去除重複性，不用重複以人工建兩筆容量資料
+                for (let i = 0; i <= 1; i++) {
+                    let ipad_air_Specification_btn = document.createElement("button");
+                    //產品容量區按鈕區
+                    //創一個button節點
+                    //在button標籤，設定一個class屬性叫 ipad_air_Specification_btn，再到上面的css處理
+                    ipad_air_Specification_btn.setAttribute("class", "ipad_air_Specification_btn");
+
+                    //容量標題區 ，就是64GB與256GB
+                    //創一個h3節點
+                    let ipad_air_Specification_btn_h3 = document.createElement("h3");
+                    //在h3標籤，設定一個class屬性叫 ipad_air_Specification_h3，再到上面的css處理
+                    ipad_air_Specification_btn_h3.setAttribute("class", "ipad_air_Specification_btn_h3");
+                    //抓取json資料的storage: 值，的容量文字
+                    ipad_air_Specification_btn_h3.innerText = jsdata.iPad_air[i].storage;
+                    //在把處理過的容量標題區，在依序放入動態所創的HTML節點結構
+                    ipad_air_Specification_btn.appendChild(ipad_air_Specification_btn_h3);
+                    ipad_air_Specification.appendChild(ipad_air_Specification_btn);
+                    right_text.appendChild(ipad_air_Specification);
+                    introduce.appendChild(right_text);
+
+                    //容量文字區 ，就是NT17900與NT22900
+                    //創一個p節點
+                    let ipad_air_Specification_btn_p = document.createElement("p");
+                    //在h3標籤，設定一個class屬性叫 ipad_air_Specification_h3，再到上面的css處理
+                    ipad_air_Specification_btn_p.setAttribute("class", "ipad_air_Specification_btn_p");
+                    //初始化陣列
+                    let price_x = 17900;
+                    //宣告一個陣列，因為64GB價錢是NT17900，256GB價錢是NT22900，256GB與64GB差價是5000元。
+                    let ipad_air_Specification_btn_p_Array = [price_x, (price_x + 5000)];
+                    //把價錢寫入p標籤
+                    ipad_air_Specification_btn_p.innerText = `NT${ipad_air_Specification_btn_p_Array[i]}起`;
+
+                    // //在把處理過的容量標題區，在依序放入動態所創的HTML節點結構
+                    ipad_air_Specification_btn.appendChild(ipad_air_Specification_btn_p);
+                    ipad_air_Specification.appendChild(ipad_air_Specification_btn);
+                    right_text.appendChild(ipad_air_Specification);
+                    introduce.appendChild(right_text);
+
+                    //設定一個click事件
+                    ipad_air_Specification_btn.addEventListener("click", function (){
+                        //取得按鈕上的字
+                        jsdata_storage = jsdata.iPad_air[i].storage;
+                        //呼叫價錢區方法
+                        right_text_structure_Price();
+                        
+                        //
+                        let ipad_air_Specification_btn_bgc  = document.querySelectorAll('.ipad_air_Specification_btn');
+                        //
+                        ipad_air_Specification_btn_bgc.forEach(x => x.classList.remove('ipad_air_Specification_btn_bgc'));
+                        //
+                        ipad_air_Specification_btn.classList.add('ipad_air_Specification_btn_bgc');
+
+                    });
+
+                    
+                }
+
+            }
+
+            //WiFi區方法
+            //ipad_air，WiFi區
+            let ipad_air_WiFi = document.createElement("div");
+            //在div標籤，設定一個class屬性叫 ipad_air_WiFi，再到上面的css處理
+            ipad_air_WiFi.setAttribute("class", "ipad_air_WiFi");
+            function right_text_structure_WiFi() {
+                //WiFi標題區
+                let ipad_air_WiFi_h2 = document.createElement("h2");
+                //在h2標籤，設定一個class屬性叫 ipad_air_WiFi_h2，再到上面的css處理
+                ipad_air_WiFi_h2.setAttribute("class", "ipad_air_WiFi_h2");
+                //在h2標籤用innerText寫入 儲存裝置 ，的內容
+                ipad_air_WiFi_h2.innerText = "連線能力"
+                //在把處理過的容量標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_WiFi_h2);
+
+                //WiFi文字介紹區
+                let ipad_air_WiFi_p = document.createElement("p");
+                //在p標籤用innerText寫入 儲存裝置 ，的內容
+                ipad_air_WiFi_p.innerText = "提前為日後預留空間。你的 iPad Air 儲存空間愈大， 你就有愈多空間儲存數位內容，滿足今日所需，也滿足未來需求。"
+                //在把處理過的容量標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_WiFi_p)
+
+            
+                //WiFi區
+                //總共有兩筆容量資料，所以用for把程式寫在裡面這樣可以去除重複性，不用重複以人工建兩筆容量資料
+                for (let i = 0; i <= 1; i++) {
+                    //ipad_air，WiFi區
+                    let ipad_air_WiFi_btn = document.createElement("button");
+                    //在button標籤，設定一個class屬性叫 ipad_air_WiFi_btn，再到上面的css處理
+                    ipad_air_WiFi_btn.setAttribute("class", "ipad_air_WiFi_btn");
+
+                    //WiFi標題區 ，就是Wi-Fi與Wi-Fi + 行動網路
+                    //創一個h3節點
+                    let ipad_air_WiFi_btn_h3 = document.createElement("h3");
+                    //在h3標籤，設定一個class屬性叫 ipad_air_WiFi_btn_h3，再到上面的css處理
+                    ipad_air_WiFi_btn_h3.setAttribute("class", "ipad_air_WiFi_btn_h3");
+
+                    //抓取json資料的storage: 值，的容量文字
+                    ipad_air_WiFi_btn_h3.innerText = jsdata.iPad_air[i].network;
+                    //在把處理過的容量標題區，在依序放入動態所創的HTML節點結構
+                    ipad_air_WiFi_btn.appendChild(ipad_air_WiFi_btn_h3);
+                    ipad_air_WiFi.appendChild(ipad_air_WiFi_btn);
+                    right_text.appendChild(ipad_air_WiFi);
+                    introduce.appendChild(right_text);
+
+                    //設定一個click事件
+                    ipad_air_WiFi_btn.addEventListener("click", function (){
+                        //取得按鈕上的字
+                        jsdata_network = jsdata.iPad_air[i].network;
+                        //console.log(jsdata_network)
+                        //呼叫價錢區方法
+                        right_text_structure_Price();
+
+                        //
+                        let ipad_air_WiFi_btn_bgc  = document.querySelectorAll('.ipad_air_WiFi_btn');
+                        //
+                        ipad_air_WiFi_btn_bgc.forEach(x => x.classList.remove('ipad_air_WiFi_btn_bgc'));
+                        //
+                        ipad_air_WiFi_btn.classList.add('ipad_air_WiFi_btn_bgc');
+                    });
+                    
+                }
+
+                // //價錢標題區
+                // let ipad_air_Price_h2 = document.createElement("h2");
+                // //在h2標籤用innerText寫入 總價 ，的內容
+                // ipad_air_Price_h2.innerText = "總價"
+                // //在把處理過的價錢標題，在依序放入動態所創的HTML節點結構
+                // right_text.appendChild(ipad_air_Price_h2);
+            }
+            
+            //價錢區方法
+            let ipad_air_Price_h2 = document.createElement("h2");
+            //在h2標籤，設定一個class屬性叫 ipad_air_Price_h2，再到上面的css處理
+            ipad_air_Price_h2.setAttribute("class", "ipad_air_Price_h2");
+            let ipad_air_Price_p = document.createElement("p");
+            //在p標籤，設定一個class屬性叫 ipad_air_Price_p，再到上面的css處理
+            ipad_air_Price_p.setAttribute("class", "ipad_air_Price_p");
+            function right_text_structure_Price(){
+
+                //價錢標題區
+                //在h2標籤用innerText寫入 總價 ，的內容
+                ipad_air_Price_h2.innerText = "總價"
+                //在把處理過的價錢標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(ipad_air_Price_h2);
+
+
+
+                //用filter()方法，可以讓電腦去判斷jsdata的陣列資料，自訂設定的條件。
+                let ipad = jsdata.iPad_air.filter(x=>x.color==jsdata_color && x.storage==jsdata_storage && x.network==jsdata_network)
+                //console.log(ipad)
+                //價錢文字區
+                if(ipad.length > 0){
+                    ipad_air_Price_p.innerText = `${jsdata_color} + ${jsdata_storage} + ${jsdata_network}總價是:NT${ipad[0].price}`;
+                //在把處理過的價錢標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild( ipad_air_Price_p);
+                }
+                
+
+            }
+
+
+
+            //MacPro產品按鈕
+            MacPro.addEventListener("click", function () {
+                
+            });
+
+            //iphone產品按鈕
+            iphone.addEventListener("click", function () {
+                //先清空在製造，如果放在最底下的話，這樣圖片被製造出來後，會被清掉
+                //防呆，防止點擊多次產生多筆資料，所以要清空
+                left_pic.innerText = "";
+                right_text.innerText = "";
+
+                //首頁產品圖
+                //創一個img節點
+                iphone_pic = document.createElement("img");
+                //在img標籤，設定一個class屬性叫 iphone_pic，再到上面的css處理
+                iphone_pic.setAttribute("class", "iphone_pic")
+                //在設定放入 首頁產品圖
+                iphone_pic.setAttribute("src", "./iphone/iphone_all.jpg")
+                //在設定css 
+                iphone_pic.setAttribute("style", "width: 100%")
+                //在把處理過的首頁產品圖，在依序放入動態所創的HTML節點結構
+                left_pic.appendChild(iphone_pic);
+                introduce.appendChild(left_pic);
+
+                // //呼叫iphone顏色區方法
+                right_text_structure_iphone_Color();
+                // //呼叫iphone容量區方法
+                right_text_structure_iphone_Capacity();
+                // //呼叫iphone尺寸區方法
+                right_text_structure_iphone_Size();
+                // //呼叫WiFi區方法
+                // right_text_structure_WiFi();
+                // //呼叫總價區方法
+                // right_text_structure_Price();
+            });
+
+            //iphone顏色區方法
+            function right_text_structure_iphone_Color() {
+                //iphone顏色區
+                let iphone_color = document.createElement("div");
+                //在div標籤，設定一個class屬性叫 ipad_air_color，再到上面的css處理
+                iphone_color.setAttribute("class", "iphone_color")
+
+                //顏色標題區
+                let iphone_color_h2 = document.createElement("h2");
+                //在h2標籤用innerText寫入 顏色 ，的內容
+                iphone_color_h2.innerText = "顏色"
+                //在把處理過的顏色標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(iphone_color_h2)
+
+                //顏色區
+                //總共有五筆顏色資料，所以用for把程式寫在裡面這樣可以去除重複性，不用重複以人工建五筆顏色資料
+                for (let i = 0; i <= 4; i++) {
+                    //產品顏色按鈕區
+                    //創一個button節點
+                    let iphone_color_pic = document.createElement("button");
+                    //在button標籤，設定一個class屬性叫 iphone_color_pic，再到上面的css處理
+                    iphone_color_pic.setAttribute("class", "iphone_color_pic");
+                    //設定一個click事件
+                    iphone_color_pic.addEventListener("click", function () {
+                        //宣告一個陣列，把產品顏色的圖片資料用圖片路徑一筆一筆，按造順序放入陣列裡。
+                        let colorArray = ["./iphone/iphone-13-pro-green.png ", "./iphone/iphone-13-pro-silver-select.png", "./iphone/iphone-13-pro-gold-select.png", "./iphone/iphone-13-pro-graphite-select.png", "./iphone/iphone-13-pro-blue-select.png"];
+                        //要清空的首頁產品圖
+                        left_pic.innerText = "";
+                        //在設定放入點選相對應的產品顏色圖，用剛宣告一個陣列colorArray的索引值來找。
+                        iphone_pic.setAttribute("src", colorArray[i])
+                        //在把處理過的產品顏色圖，在依序放入動態所創的HTML節點結構
+                        left_pic.appendChild(iphone_pic)
+                        //取得按鈕上的字，要記錄點選甚麼東西
+                        jsdata_color = jsdata.iPhone[i].color;
+                        //呼叫價錢區方法
+                        right_text_structure_Price();
+                        
+                    });
+
+                    //顏色圖片區
+                    //創一個img節點
+                    let iphone_color_img = document.createElement("img");
+                    //在img標籤，設定一個class屬性叫 iphone_color_img，再到上面的css處理
+                    iphone_color_img.setAttribute("class", "iphone_color_img")
+                    //在img標籤，設定一個src屬性叫 圖片路徑(記得要放剛剛上面遠端取回來json資料，用索引值取到裡面的picture: 值 )，還有一樣要把圖片下載下來
+                    iphone_color_img.setAttribute("src", `./iphone/${jsdata.iPhone[i].picture}`);
+                    //在把處理過的顏色圖片，在依序放入動態所創的HTML節點結構
+                    iphone_color_pic.appendChild(iphone_color_img);
+                    iphone_color.appendChild(iphone_color_pic);
+                    right_text.appendChild(iphone_color);
+                    introduce.appendChild(right_text);
+
+                    //顏色文字區
+                    //創一個p節點
+                    let iphone_color_pic_p = document.createElement("p");
+                    //在p標籤，設定一個class屬性叫 iphone_color_pic_p，再到上面的css處理
+                    iphone_color_pic_p.setAttribute("class", "iphone_color_pic_p");
+                    //抓取json資料的color: 值，的顏色文字
+                    iphone_color_pic_p.innerText = jsdata.iPhone[i].color;
+
+                    //在把處理過的顏色文字，在依序放入動態所創的HTML節點結構
+                    iphone_color_pic.appendChild(iphone_color_pic_p);
+                    iphone_color.appendChild(iphone_color_pic);
+                    right_text.appendChild(iphone_color);
+                    introduce.appendChild(right_text);
+                }
+            }
+        
+
+            //iphone尺寸區方法
+            function right_text_structure_iphone_Size(){
+                //iphone尺寸區
+                let iphone_size = document.createElement("div");
+                //在div標籤，設定一個class屬性叫 iphone_size，再到上面的css處理
+                iphone_size.setAttribute("class", "iphone_size")
+
+                //尺寸標題區
+                let iphone_size_h2 = document.createElement("h2");
+                //在h2標籤用innerText寫入 選擇機型 ，的內容
+                iphone_size_h2.innerText = "選擇機型"
+                //在把處理過的尺寸標題，在依序放入動態所創的HTML節點結構
+                right_text.appendChild(iphone_size_h2)
+
+                //尺寸區
+                //總共有2筆尺寸資料，所以用for把程式寫在裡面這樣可以去除重複性，不用重複以人工建2筆尺寸資料
+                for (let i = 0; i <= 1; i++){
+                    //產品尺寸按鈕區
+                    //創一個button節點
+                    let iphone_size_pic = document.createElement("button");
+                    //在button標籤，設定一個class屬性叫 iphone_size_pic，再到上面的css處理
+                    iphone_size_pic.setAttribute("class", "iphone_size_pic");
+
+                    //設定一個click事件
+                    iphone_size_pic.addEventListener("click", function () {
+                        
+                        //在把處理過的產品尺寸圖，在依序放入動態所創的HTML節點結構
+                        left_pic.appendChild(iphone_pic)
+                        //取得按鈕上的字，要記錄點選甚麼東西
+                        jsdata_color = jsdata.iPhone[i].scren;
+                        //呼叫價錢區方法
+                        right_text_structure_Price();
+                        
+                    });
+
+
+                    //尺寸文字區
+                    //創一個p節點
+                    let iphone_size_pic_h3 = document.createElement("h3");
+                    //在p標籤，設定一個class屬性叫 iphone_size_pic_h3，再到上面的css處理
+                    iphone_size_pic_h3.setAttribute("class", "iphone_size_pic_h3");
+                    //在h3標籤用innerText寫入 顏色 ，的內容
+                    iphone_size_pic_h3.innerText = jsdata.iPhone[i].model;
+                    //在把處理過的顏色標題，在依序放入動態所創的HTML節點結構
+                    right_text.appendChild(iphone_size_pic_h3)
+
+                    //在把處理過的顏色文字，在依序放入動態所創的HTML節點結構
+                    iphone_size_pic.appendChild(iphone_size_pic_h3);
+                    iphone_size.appendChild(iphone_size_pic);
+                    right_text.appendChild(iphone_size);
+                    introduce.appendChild(right_text);
+
+
+                    //尺寸文字區
+                    //創一個p節點
+                    let iphone_size_pic_p = document.createElement("p");
+                    //在p標籤，設定一個class屬性叫 iphone_size_pic_p，再到上面的css處理
+                    iphone_size_pic_p.setAttribute("class", "iphone_size_pic_p");
+                    //抓取json資料的color: 值，的顏色文字
+                    iphone_size_pic_p.innerText = jsdata.iPhone[i].scren;
+
+                    //在把處理過的顏色文字，在依序放入動態所創的HTML節點結構
+                    iphone_size_pic.appendChild(iphone_size_pic_p);
+                    iphone_size.appendChild(iphone_size_pic);
+                    right_text.appendChild(iphone_size);
+                    introduce.appendChild(right_text);
+
+                }
+            }
+
+
+            //iphone容量區方法
+            function right_text_structure_iphone_Capacity(){
+
+            }
+        }
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
